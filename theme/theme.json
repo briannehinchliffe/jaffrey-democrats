@@ -187,13 +187,7 @@
 					"name": "5X-Large"
 				}
 			],
-			"units": [
-				"px",
-				"rem",
-				"vh",
-				"vw",
-				"%"
-			]
+			"units": ["px", "rem", "vh", "vw", "%"]
 		},
 		"typography": {
 			"dropCap": false,
@@ -215,9 +209,7 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/Volkhov-Regular.ttf"
-							]
+							"src": ["file:./assets/fonts/Volkhov-Regular.ttf"]
 						},
 						{
 							"fontDisplay": "block",
@@ -225,9 +217,7 @@
 							"fontStretch": "normal",
 							"fontStyle": "italic",
 							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/Volkhov-Italic.ttf"
-							]
+							"src": ["file:./assets/fonts/Volkhov-Italic.ttf"]
 						},
 						{
 							"fontDisplay": "block",
@@ -235,9 +225,7 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/Volkhov-Bold.ttf"
-							]
+							"src": ["file:./assets/fonts/Volkhov-Bold.ttf"]
 						},
 						{
 							"fontDisplay": "block",
@@ -458,7 +446,7 @@
 			},
 			"core/quote": {
 				"typography": {
-					"fontFamily" : "var:preset|font-family|primary",
+					"fontFamily": "var:preset|font-family|primary",
 					"fontSize": "var(--wp--preset--font-size--large)",
 					"fontStyle": "italic",
 					"fontWeight": "var(--wp--custom--font-weight--semibold)"

@@ -23,10 +23,13 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
 */
 @layer properties;
 :root, :host {
-  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-			"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-			"Liberation Mono", "Courier New", monospace;
+		"Liberation Mono", "Courier New", monospace;
+  --color-red-700: oklch(50.5% 0.213 27.518);
+  --color-blue-200: oklch(88.2% 0.059 254.128);
   --color-neutral-100: oklch(97% 0 0);
   --color-neutral-200: oklch(92.2% 0 0);
   --color-neutral-300: oklch(87% 0 0);
@@ -38,14 +41,23 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --color-neutral-900: oklch(20.5% 0 0);
   --color-white: #fff;
   --spacing: 0.25rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
+  --font-weight-medium: 500;
   --font-weight-extrabold: 800;
+  --blur-sm: 8px;
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --default-font-family: var(--font-sans);
   --default-mono-font-family: var(--font-mono);
   --color-background: var(--wp--preset--color--white);
   --color-foreground: var(--wp--preset--color--foreground);
   --color-primary: var(--wp--preset--color--primary);
+  --color-secondary: var(--wp--preset--color--secondary);
   --container-content: var(--wp--style--global--content-size);
   --container-wide: var(--wp--style--global--wide-size);
   --tw-prose-font-normal: 400;
@@ -55,7 +67,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --tw-prose-font-extrabold: 800;
   --tw-prose-font-black: 900;
 }
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Merriweather:wght@700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Merriweather:wght@700;900&display=swap");
 *, ::after, ::before, ::backdrop, ::file-selector-button {
   box-sizing: border-box;
   margin: 0;
@@ -209,6 +221,83 @@ body {
   font-family: var(--font-sans);
   color: var(--color-primary);
 }
+.admin-bar header#masthead {
+  top: var(--wp-admin--admin-bar--height, 32px);
+}
+header#masthead {
+  background-color: var(--color-primary);
+}
+:is(header#masthead nav) a {
+  color: var(--color-background);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: 0.15s;
+  text-decoration: none;
+  background-color: transparent;
+}
+:is(:is(header#masthead nav) a):hover {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border-bottom: 2px solid rgb(168, 25, 46);
+  transition: 0.15s;
+  text-decoration: none;
+}
+header#masthead .btn-menu {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+:is(header#masthead .btn-menu):hover,:is(header#masthead .btn-menu):focus-visible {
+  background-color: var(--color-red-700);
+}
+header#masthead #primary-menu-mobile li {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+@media (hover: hover) {
+  :is(header#masthead #primary-menu-mobile li):hover {
+    color: var(--color-primary);
+  }
+}
+header#masthead .custom-logo-link {
+  flex-shrink: 0;
+}
+header#masthead .custom-logo {
+  height: calc(var(--spacing) * 20);
+  width: auto;
+  object-fit: contain;
+}
+@media (width >= 64rem) {
+  header#masthead .custom-logo {
+    height: calc(var(--spacing) * 30);
+  }
+}
+@media (width < 767px) {
+  #content {
+    padding-top: calc(var(--spacing) * 20);
+  }
+}
+@media (width >= 48rem) {
+  #content {
+    padding-top: calc(var(--spacing) * 30);
+  }
+}
 .page-title, .entry-title {
   margin-inline: auto;
   margin-bottom: calc(var(--spacing) * 6);
@@ -241,6 +330,35 @@ body {
   float: right;
   margin-left: calc(var(--spacing) * 8);
 }
+:is(footer aside) a {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  color: var(--color-blue-200);
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+@media (hover: hover) {
+  :is(:is(footer aside) a):hover {
+    color: var(--color-white);
+  }
+}
+:is(footer .footer-menu) a {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  color: var(--color-blue-200);
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+@media (hover: hover) {
+  :is(:is(footer .footer-menu) a):hover {
+    color: var(--color-white);
+  }
+}
+:is(footer .footer-menu) li + li {
+  margin-top: calc(var(--spacing) * 2.5);
+}
 .visible {
   visibility: visible;
 }
@@ -255,11 +373,57 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
+.fixed {
+  position: fixed;
+}
 .sticky {
   position: sticky;
 }
 .start {
   inset-inline-start: var(--spacing);
+}
+.top-0 {
+  top: calc(var(--spacing) * 0);
+}
+.right-0 {
+  right: calc(var(--spacing) * 0);
+}
+.left-0 {
+  left: calc(var(--spacing) * 0);
+}
+.z-50 {
+  z-index: 50;
+}
+.container {
+  width: 100%;
+}
+@media (width >= 40rem) {
+  .container {
+    max-width: 40rem;
+  }
+}
+@media (width >= 48rem) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media (width >= 64rem) {
+  .container {
+    max-width: 64rem;
+  }
+}
+@media (width >= 80rem) {
+  .container {
+    max-width: 80rem;
+  }
+}
+@media (width >= 96rem) {
+  .container {
+    max-width: 96rem;
+  }
+}
+.mx-auto {
+  margin-inline: auto;
 }
 .prose {
   --tw-prose-body: var(--color-foreground);
@@ -710,15 +874,72 @@ body {
 .contents {
   display: contents;
 }
+.flex {
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+.h-20 {
+  height: calc(var(--spacing) * 20);
+}
+.max-w-content {
+  max-width: var(--container-content);
+}
 .max-w-none {
   max-width: none;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: calc(var(--spacing) * 4);
+}
+.gap-8 {
+  gap: calc(var(--spacing) * 8);
 }
 .border {
   border-style: var(--tw-border-style);
   border-width: 1px;
 }
+.border-t {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 1px;
+}
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-white\/97 {
+  background-color: color-mix(in srgb, #fff 97%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-white\/97 {
+    background-color: color-mix(in oklab, var(--color-white) 97%, transparent);
+  }
+}
 .fill-white {
   fill: var(--color-white);
+}
+.p-2 {
+  padding: calc(var(--spacing) * 2);
+}
+.px-5 {
+  padding-inline: calc(var(--spacing) * 5);
+}
+.py-4 {
+  padding-block: calc(var(--spacing) * 4);
+}
+.text-primary {
+  color: var(--color-primary);
 }
 .italic {
   font-style: italic;
@@ -729,6 +950,20 @@ body {
 .outline {
   outline-style: var(--tw-outline-style);
   outline-width: 1px;
+}
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(var(--blur-sm));
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.duration-300 {
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
 }
 .content-none {
   --tw-content: none;
@@ -772,6 +1007,41 @@ body {
   --tw-prose-invert-th-borders: var(--color-neutral-600);
   --tw-prose-invert-td-borders: var(--color-neutral-700);
 }
+.focus\:outline-none:focus {
+  --tw-outline-style: none;
+  outline-style: none;
+}
+.focus-visible\:ring-2:focus-visible {
+  --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.focus-visible\:ring-offset-2:focus-visible {
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+}
+.focus-visible\:ring-offset-white:focus-visible {
+  --tw-ring-offset-color: var(--color-white);
+}
+@media (width >= 48rem) {
+  .md\:flex {
+    display: flex;
+  }
+}
+@media (width >= 48rem) {
+  .md\:hidden {
+    display: none;
+  }
+}
+@media (width >= 48rem) {
+  .md\:h-30 {
+    height: calc(var(--spacing) * 30);
+  }
+}
+@media (width >= 64rem) {
+  .lg\:px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+}
 .prose-a\:text-primary :is(a):not(:where([class~='not-prose'],[class~='not-prose'] *)) {
   color: var(--color-primary);
 }
@@ -789,12 +1059,141 @@ body {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
       --tw-border-style: solid;
       --tw-outline-style: solid;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
     }
   }
 }

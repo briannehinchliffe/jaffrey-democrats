@@ -9,6 +9,80 @@
  */
 
 /**
+ * Header styles.
+ */
+
+/* Dynamically push the header down if the admin bar is visible */
+.admin-bar header#masthead {
+	top: var(--wp-admin--admin-bar--height, 32px);
+}
+
+header#masthead {
+	background-color: var(--color-primary);
+	nav {
+		a {
+			color: var(--color-background);
+			font-weight: 500;
+			font-size: 0.9rem;
+			padding: 0.4rem 0.75rem;
+			border-radius: 6px;
+			border-bottom: 2px solid transparent;
+			transition: 0.15s;
+			text-decoration: none;
+			background-color: transparent;
+
+			&:hover {
+				color: rgb(255, 255, 255);
+				font-weight: 700;
+				font-size: 0.9rem;
+				padding: 0.4rem 0.75rem;
+				border-radius: 6px;
+				border-bottom: 2px solid rgb(168, 25, 46);
+				transition: 0.15s;
+				text-decoration: none;
+			}
+		}
+
+		/*.current-menu-item a {*/
+		/*	@apply;*/
+		/*}*/
+	}
+
+	.btn-menu {
+		background-color: var(--color-secondary);
+		color: var(--color-background);
+		font-weight: 700;
+		font-size: 0.9rem;
+		padding: 0.5rem 1.25rem;
+		border-radius: 6px;
+		text-decoration: none;
+		transition: background-color 0.2s;
+
+		&:hover,
+		&:focus-visible {
+			@apply bg-red-700;
+		}
+	}
+
+
+	#primary-menu-mobile li {
+		@apply hover:text-primary text-base font-medium transition-colors;
+	}
+
+	.custom-logo-link {
+		@apply flex-shrink-0;
+	}
+
+	.custom-logo {
+		@apply h-20 w-auto object-contain lg:h-30;
+	}
+}
+
+#content {
+	@apply max-[767px]:pt-20 md:pt-30;
+}
+
+/**
  * Post title styles
  *
  * These will be applied to all headings with a `page-title` or `entry-title`
@@ -66,4 +140,26 @@
 
 .entry-content > .alignright {
 	@apply float-right ml-8;
+}
+
+/**
+ * Footer styles.
+ */
+
+footer {
+	aside {
+		a {
+			@apply text-sm text-blue-200 transition-colors hover:text-white;
+		}
+	}
+
+	.footer-menu {
+		a {
+			@apply text-sm text-blue-200 transition-colors hover:text-white;
+		}
+
+		li + li {
+			@apply mt-2.5;
+		}
+	}
 }

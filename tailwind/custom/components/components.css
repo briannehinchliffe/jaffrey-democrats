@@ -20,19 +20,23 @@
 header#masthead {
 	background-color: var(--color-primary);
 	nav {
-		a {
-			color: var(--color-background);
-			font-weight: 500;
-			font-size: 0.9rem;
+		li {
 			padding: 0.4rem 0.75rem;
 			border-radius: 6px;
 			border-bottom: 2px solid transparent;
-			transition: 0.15s;
-			text-decoration: none;
 			background-color: transparent;
+			transition: 0.15s;
 
-			&:hover {
-				color: rgb(255, 255, 255);
+			a {
+				color: var(--color-background);
+				font-weight: 500;
+				font-size: 0.9rem;
+				text-decoration: none;
+			}
+
+			&:hover,
+			&:active {
+				color: var(--color-background);
 				font-weight: 700;
 				font-size: 0.9rem;
 				padding: 0.4rem 0.75rem;
@@ -65,8 +69,24 @@ header#masthead {
 	}
 
 
-	#primary-menu-mobile li {
-		@apply hover:text-primary text-base font-medium transition-colors;
+	#primary-menu-mobile {
+		background-color: #0a2259;
+
+		li {
+			color: rgb(255, 255, 255);
+			font-weight: 700;
+			font-size: 1rem;
+			padding: 0.65rem 0.75rem;
+			border-radius: 6px;
+			text-decoration: none;
+
+			&:hover,
+			&:active {
+				background-color: rgba(255, 255, 255, 0.1);
+				border-left: 3px solid rgb(168, 25, 46);
+				border-bottom: 0;
+			}
+		}
 	}
 
 	.custom-logo-link {

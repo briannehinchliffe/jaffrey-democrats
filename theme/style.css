@@ -43,11 +43,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing: 0.25rem;
   --text-sm: 0.875rem;
   --text-sm--line-height: calc(1.25 / 0.875);
-  --text-base: 1rem;
-  --text-base--line-height: calc(1.5 / 1);
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
-  --font-weight-medium: 500;
   --font-weight-extrabold: 800;
   --blur-sm: 8px;
   --default-transition-duration: 150ms;
@@ -227,19 +224,21 @@ body {
 header#masthead {
   background-color: var(--color-primary);
 }
-:is(header#masthead nav) a {
-  color: var(--color-background);
-  font-weight: 500;
-  font-size: 0.9rem;
+:is(header#masthead nav) li {
   padding: 0.4rem 0.75rem;
   border-radius: 6px;
   border-bottom: 2px solid transparent;
-  transition: 0.15s;
-  text-decoration: none;
   background-color: transparent;
+  transition: 0.15s;
 }
-:is(:is(header#masthead nav) a):hover {
-  color: rgb(255, 255, 255);
+:is(:is(header#masthead nav) li) a {
+  color: var(--color-background);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+:is(:is(header#masthead nav) li):hover,:is(:is(header#masthead nav) li):active {
+  color: var(--color-background);
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.4rem 0.75rem;
@@ -261,19 +260,21 @@ header#masthead .btn-menu {
 :is(header#masthead .btn-menu):hover,:is(header#masthead .btn-menu):focus-visible {
   background-color: var(--color-red-700);
 }
-header#masthead #primary-menu-mobile li {
-  font-size: var(--text-base);
-  line-height: var(--tw-leading, var(--text-base--line-height));
-  --tw-font-weight: var(--font-weight-medium);
-  font-weight: var(--font-weight-medium);
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
+header#masthead #primary-menu-mobile {
+  background-color: #0a2259;
 }
-@media (hover: hover) {
-  :is(header#masthead #primary-menu-mobile li):hover {
-    color: var(--color-primary);
-  }
+:is(header#masthead #primary-menu-mobile) li {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+:is(:is(header#masthead #primary-menu-mobile) li):hover,:is(:is(header#masthead #primary-menu-mobile) li):active {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgb(168, 25, 46);
+  border-bottom: 0;
 }
 header#masthead .custom-logo-link {
   flex-shrink: 0;
@@ -938,8 +939,8 @@ header#masthead .custom-logo {
 .py-4 {
   padding-block: calc(var(--spacing) * 4);
 }
-.text-primary {
-  color: var(--color-primary);
+.text-background {
+  color: var(--color-background);
 }
 .italic {
   font-style: italic;

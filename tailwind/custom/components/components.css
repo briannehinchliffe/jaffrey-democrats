@@ -19,6 +19,7 @@
 
 header#masthead {
 	background-color: var(--color-primary);
+
 	nav {
 		li {
 			padding: 0.4rem 0.75rem;
@@ -52,6 +53,70 @@ header#masthead {
 		/*}*/
 	}
 
+	/* Desktop dropdown submenus */
+	#primary-menu {
+		li.menu-item-has-children {
+			position: relative;
+
+			> .sub-menu {
+				position: absolute;
+				top: calc(100% + 6px);
+				left: 50%;
+				transform: translateX(-50%);
+				min-width: 11rem;
+				background-color: #fff;
+				border-radius: 8px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+				padding: 0.375rem 0;
+				z-index: 100;
+				white-space: nowrap;
+				display: none;
+
+				li {
+					padding: 0;
+					border: none;
+					border-radius: 0;
+
+					a {
+						color: var(--color-primary);
+						font-weight: 500;
+						font-size: 0.875rem;
+						display: block;
+						padding: 0.5rem 1.125rem;
+					}
+
+					&:hover,
+					&:active {
+						background-color: var(--color-primary);
+						border: none;
+						border-radius: 0;
+						padding: 0;
+
+						a {
+							color: #fff;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+
+			/* Invisible bridge fills the gap so hover isn't lost crossing it */
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -6px;
+				left: 0;
+				right: 0;
+				height: 6px;
+			}
+
+			&:hover > .sub-menu,
+			&:focus-within > .sub-menu {
+				display: block;
+			}
+		}
+	}
+
 	.btn-menu {
 		background-color: var(--color-secondary);
 		color: var(--color-background);
@@ -79,12 +144,64 @@ header#masthead {
 			padding: 0.65rem 0.75rem;
 			border-radius: 6px;
 			text-decoration: none;
+			/* Reserve left border space so hover doesn't shift content */
+			border-left: 3px solid transparent;
 
 			&:hover,
 			&:active {
 				background-color: rgba(255, 255, 255, 0.1);
 				border-left: 3px solid rgb(168, 25, 46);
 				border-bottom: 0;
+			}
+		}
+
+		li.menu-item-has-children {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			> a {
+				flex: 1;
+			}
+
+			> .sub-menu {
+				display: none;
+				width: 100%;
+				padding-left: 0.75rem;
+				padding-top: 0.25rem;
+
+				&.is-open {
+					display: flex;
+					flex-direction: column;
+				}
+
+				li {
+					font-size: 0.9rem;
+					font-weight: 500;
+					padding: 0.4rem 0.75rem;
+					/* Sub-items use indentation instead of border highlight */
+					border-left: none;
+
+					&:hover,
+					&:active {
+						border-left: none;
+					}
+				}
+			}
+		}
+
+		.submenu-toggle {
+			background: transparent;
+			border: none;
+			color: rgba(255, 255, 255, 0.7);
+			cursor: pointer;
+			padding: 0.25rem;
+			display: inline-flex;
+			align-items: center;
+			transition: transform 0.2s;
+
+			&[aria-expanded="true"] {
+				transform: rotate(180deg);
 			}
 		}
 	}

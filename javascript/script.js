@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         menuIcon.classList.replace('hidden', 'block');
         closeIcon.classList.replace('block', 'hidden');
         toggleButton.focus();
+
+        // Collapse any open mobile submenus
+        mobileMenu
+            .querySelectorAll('.sub-menu.is-open')
+            .forEach((sub) => sub.classList.remove('is-open'));
+        mobileMenu
+            .querySelectorAll('.submenu-toggle[aria-expanded="true"]')
+            .forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
     };
 
     toggleButton.addEventListener('click', () => {
@@ -57,4 +65,40 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         }
     });
+
+    // Inject expand/collapse toggle buttons for mobile submenus
+    document
+        .querySelectorAll('#primary-menu-mobile > li.menu-item-has-children')
+        .forEach((item) => {
+            const link = item.querySelector(':scope > a');
+            const subMenu = item.querySelector(':scope > .sub-menu');
+
+            if (!link || !subMenu) return;
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+            toggleBtn.className = 'submenu-toggle';
+            toggleBtn.innerHTML =
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+
+            link.insertAdjacentElement('afterend', toggleBtn);
+
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = subMenu.classList.contains('is-open');
+                subMenu.classList.toggle('is-open', !isOpen);
+                toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+            });
+        });
+
+    // Desktop dropdown: Escape collapses open submenu and returns focus to parent link
+    document
+        .querySelectorAll('#primary-menu .menu-item-has-children')
+        .forEach((item) => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    item.querySelector(':scope > a')?.focus();
+                }
+            });
+        });
 });

@@ -247,6 +247,56 @@ header#masthead {
   transition: 0.15s;
   text-decoration: none;
 }
+:is(header#masthead #primary-menu) li.menu-item-has-children {
+  position: relative;
+}
+:is(:is(header#masthead #primary-menu) li.menu-item-has-children)  > .sub-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 11rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  padding: 0.375rem 0;
+  z-index: 100;
+  white-space: nowrap;
+  display: none;
+}
+:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+:is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li) a {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: block;
+  padding: 0.5rem 1.125rem;
+}
+:is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li):hover,:is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li):active {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+:is(:is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li):hover,:is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li):active) a {
+  color: #fff;
+  font-weight: 500;
+}
+:is(:is(header#masthead #primary-menu) li.menu-item-has-children)::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+:is(:is(header#masthead #primary-menu) li.menu-item-has-children):hover > .sub-menu,:is(:is(header#masthead #primary-menu) li.menu-item-has-children):focus-within > .sub-menu {
+  display: block;
+}
 header#masthead .btn-menu {
   background-color: var(--color-secondary);
   color: var(--color-background);
@@ -270,11 +320,52 @@ header#masthead #primary-menu-mobile {
   padding: 0.65rem 0.75rem;
   border-radius: 6px;
   text-decoration: none;
+  border-left: 3px solid transparent;
 }
 :is(:is(header#masthead #primary-menu-mobile) li):hover,:is(:is(header#masthead #primary-menu-mobile) li):active {
   background-color: rgba(255, 255, 255, 0.1);
   border-left: 3px solid rgb(168, 25, 46);
   border-bottom: 0;
+}
+:is(header#masthead #primary-menu-mobile) li.menu-item-has-children {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children)  > a {
+  flex: 1;
+}
+:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children)  > .sub-menu {
+  display: none;
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-top: 0.25rem;
+}
+.is-open:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) {
+  display: flex;
+  flex-direction: column;
+}
+:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-left: none;
+}
+:is(:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li):hover,:is(:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li):active {
+  border-left: none;
+}
+:is(header#masthead #primary-menu-mobile) .submenu-toggle {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+[aria-expanded="true"]:is(:is(header#masthead #primary-menu-mobile) .submenu-toggle) {
+  transform: rotate(180deg);
 }
 header#masthead .custom-logo-link {
   flex-shrink: 0;
@@ -1015,6 +1106,9 @@ header#masthead .custom-logo {
 .focus-visible\:ring-2:focus-visible {
   --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.focus-visible\:ring-secondary:focus-visible {
+  --tw-ring-color: var(--color-secondary);
 }
 .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;

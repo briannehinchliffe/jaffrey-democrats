@@ -105,6 +105,14 @@ if ( ! function_exists( 'jaffrey_democrats_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+        // Enable the logo in the Customizer.
+        add_theme_support( 'custom-logo', array(
+            'height'      => 250,
+            'width'       => 250,
+            'flex-width'  => true,
+            'flex-height' => true,
+        ) );
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 

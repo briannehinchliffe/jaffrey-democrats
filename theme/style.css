@@ -318,13 +318,9 @@ header#masthead #primary-menu-mobile {
   font-weight: 700;
   font-size: 1rem;
   padding: 0.65rem 0.75rem;
-  border-radius: 6px;
   text-decoration: none;
-  border-left: 3px solid transparent;
 }
 :is(:is(header#masthead #primary-menu-mobile) li):hover,:is(:is(header#masthead #primary-menu-mobile) li):active {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgb(168, 25, 46);
   border-bottom: 0;
 }
 :is(header#masthead #primary-menu-mobile) li.menu-item-has-children {
@@ -348,11 +344,7 @@ header#masthead #primary-menu-mobile {
 :is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li {
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.4rem 0.75rem;
-  border-left: none;
-}
-:is(:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li):hover,:is(:is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li):active {
-  border-left: none;
+  padding: 1.25rem .5rem;
 }
 :is(header#masthead #primary-menu-mobile) .submenu-toggle {
   background: transparent;

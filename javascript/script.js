@@ -35,26 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     toggleButton.addEventListener('click', () => {
-        // Check current status
         const isExpanded =
             toggleButton.getAttribute('aria-expanded') === 'true';
 
-        // Update accessibility attributes
-        toggleButton.setAttribute('aria-expanded', !isExpanded);
-
-        // Toggle the visibility of the menu container itself
-        mobileMenu.classList.toggle('hidden');
-
-        // Swap out the icons
         if (isExpanded) {
-            // Menu closed: show burger, hide X
-            menuIcon.classList.replace('hidden', 'block');
-            closeIcon.classList.replace('block', 'hidden');
-        } else {
-            // Menu opened: hide burger, show X
-            menuIcon.classList.replace('block', 'hidden');
-            closeIcon.classList.replace('hidden', 'block');
+            closeMenu();
+            return;
         }
+
+        toggleButton.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.remove('hidden');
+
+        menuIcon.classList.replace('block', 'hidden');
+        closeIcon.classList.replace('hidden', 'block');
     });
 
     document.addEventListener('keydown', (e) => {

@@ -16,7 +16,7 @@
             the_custom_logo();
 
             // If there is a custom logo, use the screen-reader-text class to hide the site title.
-            $title_class = has_custom_logo() ? 'site-title screen-reader-text' : 'site-title';
+            $title_class = has_custom_logo() ? 'site-title sr-only' : 'site-title';
 
             if ( is_front_page() ) :
                 ?>

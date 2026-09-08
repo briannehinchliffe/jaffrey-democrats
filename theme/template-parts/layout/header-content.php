@@ -45,7 +45,7 @@
                     );
                     ?>
                 </nav>
-                <a href="/get-involved" class="btn-menu">Donate</a>
+                <a href="<?php echo esc_url( home_url( '/get-involved/' ) ); ?>" class="btn-menu"><?php esc_html_e( 'Donate', 'jaffrey-democrats' ); ?></a>
 
                 <!-- Mobile Menu Toggle Button -->
                 <button id="menu-toggle" class="p-2 text-background focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-white md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="<?php echo esc_attr__( 'Toggle menu', 'jaffrey-democrats' ); ?>">

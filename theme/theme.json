@@ -350,7 +350,7 @@
 				"semibold": "600",
 				"bold": "700"
 			},
-			"link-color": "var(--wp--preset--color--accent)",
+			"link-color": "var(--wp--preset--color--secondary)",
 			"link-color-hover": "var(--wp--preset--color--primary)"
 		}
 	},

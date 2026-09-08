@@ -21,13 +21,11 @@
 	--color-foreground: var(--wp--preset--color--foreground);
 	--color-primary: var(--wp--preset--color--primary);
 	--color-primary-light: var(--wp--preset--color--primary-light);
-	--color-primary-lightest: var(--wp--preset--color--primary-lightest);
+	--color-primary-lighter: var(--wp--preset--color--primary-lighter);
 	--color-secondary: var(--wp--preset--color--secondary);
 	--color-secondary-light: var(--wp--preset--color--secondary-light);
-	--color-secondary-lightest: var(--wp--preset--color--secondary-lightest);
 	--color-tertiary: var(--wp--preset--color--tertiary);
 	--color-tertiary-light: var(--wp--preset--color--tertiary-light);
-	--color-tertiary-lightest: var(--wp--preset--color--tertiary-lightest);
 	--color-muted: var(--wp--preset--color--muted);
 	--color-muted-foreground: var(--wp--preset--color--muted-foreground);
 	--container-content: var(--wp--style--global--content-size);

@@ -94,9 +94,9 @@
                 </div>
 
                 <div style="margin-top: 1.5rem; padding: 0.75rem; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
-                    <p style="color: rgb(138, 167, 212); font-size: 0.8rem; margin-bottom: 0.4rem;">Affiliated with:</p>
-                    <a href="https://nhdp.org" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#93b4e8] underline hover:text-[#93b4e8] hover:underline">
-                        NH Democratic Party (NHDP) &rarr;
+                    <p style="color: rgb(138, 167, 212); font-size: 0.8rem; margin-bottom: 0.4rem;"><?php esc_html_e( 'Affiliated with:', 'jaffrey-democrats' ); ?></p>
+                    <a href="<?php echo esc_url( 'https://nhdp.org' ); ?>" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#93b4e8] underline hover:text-[#93b4e8] hover:underline">
+                        <?php esc_html_e( 'NH Democratic Party (NHDP) →', 'jaffrey-democrats' ); ?>
                     </a>
                 </div>
             </div>

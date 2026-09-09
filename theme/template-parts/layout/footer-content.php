@@ -17,7 +17,7 @@
             <!-- Column 1: Branding & Socials -->
             <div class="md:col-span-1">
                 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-                    <aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'david-jenkins' ); ?>">
+                    <aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'jaffrey-democrats' ); ?>">
                         <?php dynamic_sidebar( 'sidebar-1' ); ?>
                     </aside>
                 <?php endif; ?>

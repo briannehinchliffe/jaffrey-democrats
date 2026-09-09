@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 * Brand colors and font families to `theme.json`.
+* New nav menu locations registered: `primary`, `footer`, `action`, and `privacy`.
 
 ### Changed
 * Header structure and styles updated to match the design.

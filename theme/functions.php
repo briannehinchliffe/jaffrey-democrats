@@ -77,11 +77,12 @@ if ( ! function_exists( 'jaffrey_democrats_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', 'jaffrey-democrats' ),
-				'menu-2' => __( 'Footer Menu', 'jaffrey-democrats' ),
+				'primary' => __( 'Primary', 'jaffrey-democrats' ),
+				'footer' => __( 'Footer Menu', 'jaffrey-democrats' ),
+				'action' => __( 'Action Menu', 'jaffrey-democrats' ),
+				'privacy' => __( 'Privacy Menu', 'jaffrey-democrats' ),
 			)
 		);
 

@@ -30,12 +30,12 @@
                     </a>
                 </p>
             <?php endif; ?>
-            <?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+            <?php if ( has_nav_menu( 'primary' ) ) : ?>
                 <nav class="hidden items-center gap-8 md:flex" aria-label="<?php esc_attr_e( 'Primary Menu', 'jaffrey-democrats' ); ?>">
                     <?php
                     wp_nav_menu(
                             array(
-                                    'theme_location' => 'menu-1',
+                                    'theme_location' => 'primary',
                                     'menu_id'        => 'primary-menu',
                                     'container'      => false,
                                     'menu_class'     => 'flex items-center gap-8',
@@ -58,13 +58,13 @@
         </div>
     </div>
 
-    <?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+    <?php if ( has_nav_menu( 'primary' ) ) : ?>
         <!-- Mobile Menu Panel (Hidden by default) -->
         <nav id="mobile-menu" class="border-border hidden border-t bg-white md:hidden" aria-label="<?php esc_attr_e( 'Mobile Menu', 'jaffrey-democrats' ); ?>">
             <?php
             wp_nav_menu(
                     array(
-                            'theme_location' => 'menu-1',
+                            'theme_location' => 'primary',
                             'menu_id'        => 'primary-menu-mobile',
                             'container'      => false,
                             'menu_class'     => 'px-5 py-4 flex flex-col gap-4',

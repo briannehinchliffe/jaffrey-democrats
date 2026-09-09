@@ -209,7 +209,9 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "100 900",
-							"src": ["file:./assets/fonts/Merriweather-VariableFont.ttf"]
+							"src": [
+								"file:./assets/fonts/Merriweather-VariableFont.ttf"
+							]
 						},
 						{
 							"fontDisplay": "block",
@@ -217,7 +219,9 @@
 							"fontStretch": "normal",
 							"fontStyle": "italic",
 							"fontWeight": "100 900",
-							"src": ["file:./assets/fonts/Merriweather-Italic-VariableFont.ttf"]
+							"src": [
+								"file:./assets/fonts/Merriweather-Italic-VariableFont.ttf"
+							]
 						}
 					]
 				},

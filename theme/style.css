@@ -30,7 +30,6 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
 		"Liberation Mono", "Courier New", monospace;
   --color-red-700: oklch(50.5% 0.213 27.518);
   --color-blue-200: oklch(88.2% 0.059 254.128);
-  --color-slate-900: oklch(20.8% 0.042 265.755);
   --color-neutral-100: oklch(97% 0 0);
   --color-neutral-200: oklch(92.2% 0 0);
   --color-neutral-300: oklch(87% 0 0);
@@ -49,7 +48,6 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --text-3xl--line-height: calc(2.25 / 1.875);
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
   --blur-sm: 8px;
   --default-transition-duration: 150ms;
@@ -292,7 +290,7 @@ header#masthead {
   font-weight: 500;
 }
 :is(:is(header#masthead #primary-menu) li.menu-item-has-children)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -6px;
   left: 0;
@@ -349,7 +347,7 @@ header#masthead #primary-menu-mobile {
 :is(:is(:is(header#masthead #primary-menu-mobile) li.menu-item-has-children) > .sub-menu) li {
   font-size: 0.9rem;
   font-weight: 500;
-  padding: 1.25rem .5rem;
+  padding: 1.25rem 0.5rem;
 }
 :is(header#masthead #primary-menu-mobile) .submenu-toggle {
   background: transparent;
@@ -960,9 +958,6 @@ header#masthead .custom-logo {
 .prose .wp-block-table tfoot {
   border-top-width: 1px;
 }
-.mt-5 {
-  margin-top: calc(var(--spacing) * 5);
-}
 .mt-10 {
   margin-top: calc(var(--spacing) * 10);
 }
@@ -1057,9 +1052,6 @@ header#masthead .custom-logo {
 .bg-primary {
   background-color: var(--color-primary);
 }
-.bg-slate-900 {
-  background-color: var(--color-slate-900);
-}
 .bg-white {
   background-color: var(--color-white);
 }
@@ -1106,10 +1098,6 @@ header#masthead .custom-logo {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
 }
-.tracking-wide {
-  --tw-tracking: var(--tracking-wide);
-  letter-spacing: var(--tracking-wide);
-}
 .tracking-wider {
   --tw-tracking: var(--tracking-wider);
   letter-spacing: var(--tracking-wider);
@@ -1143,11 +1131,6 @@ header#masthead .custom-logo {
   --tw-backdrop-blur: blur(var(--blur-sm));
   -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-}
-.transition {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
 .transition-all {
   transition-property: all;

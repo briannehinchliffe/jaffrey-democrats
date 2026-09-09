@@ -11,13 +11,13 @@
 
 <footer id="colophon" class="bg-primary text-white">
     <h2 class="sr-only"><?php esc_html_e( 'Footer', 'jaffrey-democrats' ); ?></h2>
-    <div class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
 
             <!-- Column 1: Branding & Socials -->
             <div class="md:col-span-1">
                 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-                    <aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'jaffrey-democrats' ); ?>">
+                    <aside role="complementary" aria-label="<?php esc_attr_e( 'About', 'jaffrey-democrats' ); ?>">
                         <?php dynamic_sidebar( 'sidebar-1' ); ?>
                     </aside>
                 <?php endif; ?>
@@ -25,7 +25,7 @@
 
             <!-- Column 2: Navigation Menu 1 -->
             <div>
-                <h3 class="text-white font-sans font-bold text-sm tracking-wider uppercase mb-4">
+                <h3 class="mb-4 font-sans text-sm font-bold tracking-wider text-white uppercase">
                     <?php esc_html_e( 'Quick Links', 'jaffrey-democrats' ); ?>
                 </h3>
 
@@ -47,7 +47,7 @@
 
             <!-- Column 3: Dynamic Sidebar / Get Involved -->
             <div>
-                <h3 class="text-white font-sans font-bold text-sm tracking-wider uppercase mb-4">
+                <h3 class="mb-4 font-sans text-sm font-bold tracking-wider text-white uppercase">
                     <?php esc_html_e( 'Get Involved', 'jaffrey-democrats' ); ?>
                 </h3>
 
@@ -69,7 +69,7 @@
 
             <!-- Column 4: Contact Info & Affiliate Box -->
             <div>
-                <h3 class="text-white font-sans font-bold text-sm tracking-wider uppercase mb-4">
+                <h3 class="mb-4 font-sans text-sm font-bold tracking-wider text-white uppercase">
                     <?php esc_html_e( 'Contact', 'jaffrey-democrats' ); ?>
                 </h3>
                 <div class="flex flex-col gap-3">
@@ -83,7 +83,7 @@
 						</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" style="color: rgb(168, 25, 46); flex-shrink: 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" style="color: rgb(168, 25, 46); flex-shrink: 0;" aria-hidden="true" focusable="false">
                             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                         </svg>
@@ -95,7 +95,7 @@
 
                 <div style="margin-top: 1.5rem; padding: 0.75rem; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <p style="color: rgb(138, 167, 212); font-size: 0.8rem; margin-bottom: 0.4rem;">Affiliated with:</p>
-                    <a href="https://nhdp.org" target="_blank" rel="noopener noreferrer" class="text-[#93b4e8] text-sm font-bold text-decoration-none hover:text-decoration-underline hover:text-[#93b4e8]">
+                    <a href="https://nhdp.org" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#93b4e8] underline hover:text-[#93b4e8] hover:underline">
                         NH Democratic Party (NHDP) &rarr;
                     </a>
                 </div>
@@ -104,8 +104,8 @@
         </div>
 
         <!-- Bottom Bar -->
-        <div class="border-t border-white/10 mt-10 pt-6 flex flex-wrap justify-between items-center gap-2">
-            <p class="text-[#93b4e8] text-sm">
+        <div class="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-6">
+            <p class="text-sm text-[#93b4e8]">
                 &copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>.
             </p>
             <?php if ( has_nav_menu( 'privacy' ) ) : ?>

@@ -79,8 +79,8 @@
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                         <span class="text-sm">
-							Jaffrey, NH 03452<br>Cheshire County
-						</span>
+                            <?php echo wp_kses_post( __( 'Jaffrey, NH 03452<br>Cheshire County', 'jaffrey-democrats' ) ); ?>
+                        </span>
                     </div>
                     <div class="flex items-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" style="color: rgb(168, 25, 46); flex-shrink: 0;" aria-hidden="true" focusable="false">

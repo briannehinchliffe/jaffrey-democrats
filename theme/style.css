@@ -24,10 +24,10 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
 @layer properties;
 :root, :host {
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+	"Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-		"Liberation Mono", "Courier New", monospace;
+	"Liberation Mono", "Courier New", monospace;
   --color-red-700: oklch(50.5% 0.213 27.518);
   --color-blue-200: oklch(88.2% 0.059 254.128);
   --color-neutral-100: oklch(97% 0 0);
@@ -978,6 +978,9 @@ header#masthead .custom-logo {
 }
 .hidden {
   display: none;
+}
+.inline {
+  display: inline;
 }
 .h-20 {
   height: calc(var(--spacing) * 20);

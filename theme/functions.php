@@ -223,6 +223,57 @@ function jaffrey_democrats_modify_heading_levels( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'jaffrey_democrats_modify_heading_levels', 10, 2 );
 
 /**
+ * Register block styles.
+ *
+ * @return void
+ */
+function jaffrey_democrats_register_block_styles() {
+    register_block_style(
+        'core/button',
+        array(
+            'name'  => 'fill-red',
+            'label' => __( 'Red Fill', 'jaffrey-democrats' ),
+        )
+    );
+
+    register_block_style(
+        'core/button',
+        array(
+            'name'  => 'fill-opaque',
+            'label' => __( 'Opaque Fill', 'jaffrey-democrats' ),
+        )
+    );
+
+    
+}
+add_action( 'init', 'jaffrey_democrats_register_block_styles' );
+
+
+/**
+ * Register a custom Countdown Timer block.
+ *
+ * @return void
+ */
+//add_action( 'init', function() {
+//    register_block_type( __DIR__ . '/blocks/countdown' );
+//} );
+
+add_action( 'init', function() {
+    $block_dir = get_template_directory() . '/blocks/countdown'; // Use get_stylesheet_directory() if using a child theme
+
+    // Register editor script with dependencies so window.wp.blocks exists
+    wp_register_script(
+        'jaffrey-democrats-countdown-editor',
+        get_template_directory_uri() . '/blocks/countdown/editor.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
+        filemtime( $block_dir . '/editor.js' )
+    );
+
+    // Register the block folder
+    register_block_type( $block_dir );
+} );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

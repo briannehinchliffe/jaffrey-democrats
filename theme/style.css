@@ -979,6 +979,9 @@ header#masthead .custom-logo {
 .hidden {
   display: none;
 }
+.inline {
+  display: inline;
+}
 .h-20 {
   height: calc(var(--spacing) * 20);
 }

@@ -979,9 +979,6 @@ header#masthead .custom-logo {
 .hidden {
   display: none;
 }
-.inline {
-  display: inline;
-}
 .h-20 {
   height: calc(var(--spacing) * 20);
 }
@@ -1065,9 +1062,6 @@ header#masthead .custom-logo {
   .bg-white\/97 {
     background-color: color-mix(in oklab, var(--color-white) 97%, transparent);
   }
-}
-.fill-white {
-  fill: var(--color-white);
 }
 .p-0 {
   padding: calc(var(--spacing) * 0);

@@ -248,31 +248,6 @@ function jaffrey_democrats_register_block_styles() {
 }
 add_action( 'init', 'jaffrey_democrats_register_block_styles' );
 
-
-/**
- * Register a custom Countdown Timer block.
- *
- * @return void
- */
-//add_action( 'init', function() {
-//    register_block_type( __DIR__ . '/blocks/countdown' );
-//} );
-
-add_action( 'init', function() {
-    $block_dir = get_template_directory() . '/blocks/countdown'; // Use get_stylesheet_directory() if using a child theme
-
-    // Register editor script with dependencies so window.wp.blocks exists
-    wp_register_script(
-        'jaffrey-democrats-countdown-editor',
-        get_template_directory_uri() . '/blocks/countdown/editor.js',
-        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
-        filemtime( $block_dir . '/editor.js' )
-    );
-
-    // Register the block folder
-    register_block_type( $block_dir );
-} );
-
 /**
  * Custom template tags for this theme.
  */

@@ -4,40 +4,48 @@ $target_date  = $attributes['targetDate'] ?? '2026-11-03T00:07:00';
 $expired_text = $attributes['expiredText'] ?? 'Go vote today!';
 
 $wp_timezone = wp_timezone();
-if ( $wp_timezone->getName() === 'UTC' ) {
-    $wp_timezone = new DateTimeZone( 'America/New_York' );
+
+try {
+    $target_time = new DateTime( $target_date, $wp_timezone );
+} catch ( Exception $e ) {
+    $target_time = false;
 }
 
-$target_time  = new DateTime( $target_date, $wp_timezone );
 $current_time = new DateTime( 'now', $wp_timezone );
 
-$diff   = max( 0, $target_time->getTimestamp() - $current_time->getTimestamp() );
-$passed = $diff <= 0;
+if ( $target_time === false ) {
+    $diff   = 0;
+    $passed = true;
+} else {
+    $diff   = max( 0, $target_time->getTimestamp() - $current_time->getTimestamp() );
+    $passed = $diff <= 0;
+}
+
+$target_iso     = $target_time ? $target_time->format( DateTime::ATOM ) : '';
+$target_display = $target_time ? $target_time->format( 'F j, Y' ) : '';
 
 $days    = str_pad( (string) floor( $diff / 86400 ), 2, '0', STR_PAD_LEFT );
 $hours   = str_pad( (string) floor( ( $diff % 86400 ) / 3600 ), 2, '0', STR_PAD_LEFT );
 $minutes = str_pad( (string) floor( ( $diff % 3600 ) / 60 ), 2, '0', STR_PAD_LEFT );
 $seconds = str_pad( (string) floor( $diff % 60 ), 2, '0', STR_PAD_LEFT );
-
 $units = array(
-    array( 'label' => 'DAYS', 'key' => 'days', 'val' => $days ),
-    array( 'label' => 'HRS',  'key' => 'hours', 'val' => $hours ),
-    array( 'label' => 'MIN',  'key' => 'minutes', 'val' => $minutes ),
-    array( 'label' => 'SEC',  'key' => 'seconds', 'val' => $seconds ),
+        array( 'label' => 'DAYS', 'key' => 'days', 'val' => $days ),
+        array( 'label' => 'HRS',  'key' => 'hours', 'val' => $hours ),
+        array( 'label' => 'MIN',  'key' => 'minutes', 'val' => $minutes ),
+        array( 'label' => 'SEC',  'key' => 'seconds', 'val' => $seconds ),
 );
 
 $wrapper_attributes = get_block_wrapper_attributes( array(
-    'class' => 'wp-block-jaffrey-democrats-countdown',
+        'class' => 'wp-block-jaffrey-democrats-countdown flex items-center justify-[inherit] gap-8 flex-wrap w-full',
 ) );
 ?>
 
 <div
-    <?php echo $wrapper_attributes; ?>
-        data-target-date="<?php echo esc_attr( $target_time->format( 'c' ) ); ?>"
-        style="display: flex; align-items: center; justify-content: inherit; gap: 2rem; flex-wrap: wrap; width: 100%;"
+        <?php echo $wrapper_attributes; ?>
+        data-target-date="<?php echo esc_attr( $target_iso ); ?>"
 >
     <!-- Left Side: Event Details & Calendar Icon -->
-    <div style="display: flex; align-items: center; gap: 0.85rem;">
+    <div class="flex items-center gap-3.5">
         <!-- Calendar Icon Badge -->
         <div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#74aaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -50,46 +58,43 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
 
         <div>
             <?php if ( ! empty( $label ) ) : ?>
-                <div style="color: #74aaff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.2; margin-bottom: 0.2rem;">
+                <div class="text-[#74aaff] text-[0.72rem] font-extrabold tracking-[0.12em] uppercase leading-tight mb-[0.2rem]">
                     <?php echo esc_html( $label ); ?>
                 </div>
             <?php endif; ?>
-            <div style="color: #ffffff; font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;">
-                <?php echo esc_html( $target_time->format( 'F j, Y' ) ); ?>
+            <div class="text-white text-xl font-bold leading-tight tracking-[-0.01em]">
+                <?php echo esc_html( $target_display ); ?>
             </div>
         </div>
     </div>
 
     <!-- Right Side: Timer Blocks -->
     <span
-            class="countdown-expired"
-            style="color: #74aaff; font-weight: 700; font-size: 1rem; display: <?php echo $passed ? 'inline' : 'none'; ?>;"
+            class="countdown-expired text-[#74aaff] font-bold text-base <?php echo $passed ? 'inline' : 'hidden'; ?>"
     >
 		<?php echo esc_html( $expired_text ); ?>
 	</span>
 
     <div
-            class="countdown-timer"
-            style="display: <?php echo $passed ? 'none' : 'flex'; ?>; align-items: flex-start; gap: 0.6rem;"
+            class="countdown-timer items-start gap-2.5 <?php echo $passed ? 'hidden' : 'flex'; ?>"
     >
         <?php foreach ( $units as $i => $unit ) : ?>
-            <div style="display: flex; align-items: flex-start; gap: 0.6rem;">
-                <div style="text-align: center;">
+            <div class="flex items-start gap-2.5">
+                <div class="text-center">
                     <!-- Pill Box -->
-                    <div style="background-color: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 0.85rem 0.75rem; min-width: 68px; display: flex; align-items: center; justify-content: center;">
+                    <div class="bg-white/[0.07] border border-white/20 rounded-xl px-3 py-3.5 min-w-[68px] flex items-center justify-center">
 						<span
-                                class="countdown-num countdown-<?php echo esc_attr( $unit['key'] ); ?>"
-                                style="display: block; font-family: 'Merriweather', serif; font-size: 2.1rem; font-weight: 900; color: #ffffff; line-height: 1; font-variant-numeric: tabular-nums;"
+                                class="countdown-num countdown-<?php echo esc_attr( $unit['key'] ); ?> block font-serif text-[2.1rem] font-black text-white leading-none [font-variant-numeric:tabular-nums]"
                         ><?php echo esc_html( $unit['val'] ); ?></span>
                     </div>
                     <!-- Label below pill -->
-                    <div style="color: rgba(255, 255, 255, 0.5); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.5rem;">
+                    <div class="text-white/50 text-[0.65rem] font-bold tracking-[0.12em] uppercase mt-2">
                         <?php echo esc_html( $unit['label'] ); ?>
                     </div>
                 </div>
 
                 <?php if ( $i < count( $units ) - 1 ) : ?>
-                    <span style="color: rgba(255, 255, 255, 0.25); font-size: 1.5rem; font-weight: 300; margin-top: 0.6rem;">:</span>
+                    <span class="text-white/25 text-2xl font-light mt-2.5">:</span>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

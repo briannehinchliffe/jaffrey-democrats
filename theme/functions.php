@@ -223,6 +223,15 @@ function jaffrey_democrats_modify_heading_levels( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'jaffrey_democrats_modify_heading_levels', 10, 2 );
 
 /**
+ * Register a custom Countdown Timer block.
+ *
+ * @return void
+ */
+add_action( 'init', function() {
+    register_block_type( __DIR__ . '/blocks/countdown' );
+} );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

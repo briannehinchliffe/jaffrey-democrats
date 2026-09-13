@@ -124,7 +124,7 @@
 					"name": "Primary color to Secondary color"
 				},
 				{
-					"slug": "primary-secondary",
+					"slug": "secondary-primary",
 					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, #7A1020 50%, var(--wp--preset--color--primary) 100%)",
 					"name": "Secondary color to Primary color"
 				}

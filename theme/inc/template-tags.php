@@ -7,6 +7,46 @@
  * @package jaffrey-democrats
  */
 
+if ( ! function_exists( 'jaffrey_democrats_page_title' ) ) :
+    /**
+     * Check if post content contains an H1 heading block.
+     *
+     * @param int|WP_Post|null $post Post ID or object. Defaults to current post.
+     * @return bool
+     */
+    function jaffrey_democrats_page_title( $post = null ) {
+        // When called recursively, $post is the parsed blocks array.
+        if ( is_array( $post ) ) {
+            foreach ( $post as $block ) {
+                if ( isset( $block['blockName'] ) && 'core/heading' === $block['blockName'] ) {
+                    $level = isset( $block['attrs']['level'] ) ? (int) $block['attrs']['level'] : 2;
+                    if ( 1 === $level ) {
+                        return true;
+                    }
+                }
+
+                if ( ! empty( $block['innerHTML'] ) && false !== strpos( $block['innerHTML'], '<h1' ) ) {
+                    return true;
+                }
+
+                if ( ! empty( $block['innerBlocks'] ) && jaffrey_democrats_page_title( $block['innerBlocks'] ) ) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        $post = get_post( $post );
+
+        if ( ! $post || ! has_blocks( $post->post_content ) ) {
+            return false;
+        }
+
+        return jaffrey_democrats_page_title( parse_blocks( $post->post_content ) );
+    }
+endif;
+
 if ( ! function_exists( 'jaffrey_democrats_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

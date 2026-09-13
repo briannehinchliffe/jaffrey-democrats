@@ -15,7 +15,7 @@ get_header();
 ?>
 
 	<section id="primary">
-		<main id="main">
+		<main id="main" class="not-prose">
 
 			<?php
 			/* Start the Loop */

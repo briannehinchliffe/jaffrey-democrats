@@ -29,7 +29,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --font-serif: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times,
 		serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-		"Liberation Mono", "Courier New", monospace;
+	"Liberation Mono", "Courier New", monospace;
   --color-red-700: oklch(50.5% 0.213 27.518);
   --color-blue-200: oklch(88.2% 0.059 254.128);
   --color-neutral-100: oklch(97% 0 0);

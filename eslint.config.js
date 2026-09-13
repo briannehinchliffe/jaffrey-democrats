@@ -27,7 +27,7 @@ export default [
 		},
 	},
 	{
-		files: ['javascript/**/*.js'],
+		files: ['javascript/**/*.js', '**/blocks/**/*.js'],
 		languageOptions: {
 			globals: {
 				...globals.browser,

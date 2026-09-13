@@ -58,11 +58,11 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
 
         <div>
             <?php if ( ! empty( $label ) ) : ?>
-                <div class="text-[#74aaff] text-[0.72rem] font-extrabold tracking-[0.12em] uppercase leading-tight mb-[0.2rem]">
+                <div class="mb-[0.2rem] text-[0.72rem] leading-tight font-extrabold tracking-[0.12em] text-[#74aaff] uppercase">
                     <?php echo esc_html( $label ); ?>
                 </div>
             <?php endif; ?>
-            <div class="text-white text-xl font-bold leading-tight tracking-[-0.01em]">
+            <div class="text-xl leading-tight font-bold tracking-[-0.01em] text-white">
                 <?php echo esc_html( $target_display ); ?>
             </div>
         </div>
@@ -70,31 +70,31 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
 
     <!-- Right Side: Timer Blocks -->
     <span
-            class="countdown-expired text-[#74aaff] font-bold text-base <?php echo $passed ? 'inline' : 'hidden'; ?>"
+            class="countdown-expired <?php echo $passed ? 'inline' : 'hidden'; ?> text-base font-bold text-[#74aaff]"
     >
 		<?php echo esc_html( $expired_text ); ?>
 	</span>
 
     <div
-            class="countdown-timer items-start gap-2.5 <?php echo $passed ? 'hidden' : 'flex'; ?>"
+            class="countdown-timer <?php echo $passed ? 'hidden' : 'flex'; ?> items-start gap-2.5"
     >
         <?php foreach ( $units as $i => $unit ) : ?>
             <div class="flex items-start gap-2.5">
                 <div class="text-center">
                     <!-- Pill Box -->
-                    <div class="bg-white/[0.07] border border-white/20 rounded-xl px-3 py-3.5 min-w-[68px] flex items-center justify-center">
+                    <div class="flex min-w-[68px] items-center justify-center rounded-xl border border-white/20 bg-white/[0.07] px-3 py-3.5">
 						<span
-                                class="countdown-num countdown-<?php echo esc_attr( $unit['key'] ); ?> block font-serif text-[2.1rem] font-black text-white leading-none [font-variant-numeric:tabular-nums]"
+                                class="countdown-num countdown-<?php echo esc_attr( $unit['key'] ); ?> block font-serif text-[2.1rem] leading-none font-black text-white [font-variant-numeric:tabular-nums]"
                         ><?php echo esc_html( $unit['val'] ); ?></span>
                     </div>
                     <!-- Label below pill -->
-                    <div class="text-white/50 text-[0.65rem] font-bold tracking-[0.12em] uppercase mt-2">
+                    <div class="mt-2 text-[0.65rem] font-bold tracking-[0.12em] text-white/50 uppercase">
                         <?php echo esc_html( $unit['label'] ); ?>
                     </div>
                 </div>
 
                 <?php if ( $i < count( $units ) - 1 ) : ?>
-                    <span class="text-white/25 text-2xl font-light mt-2.5">:</span>
+                    <span class="mt-2.5 text-2xl font-light text-white/25">:</span>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

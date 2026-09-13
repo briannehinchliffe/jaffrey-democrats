@@ -13,12 +13,11 @@
 
 	<header class="entry-header">
 		<?php
-		if ( ! is_front_page() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		}
-		?>
+        // If it's not the front page and the content doesn't already contain an H1, display the title.
+        if ( ! is_front_page() && ! jaffrey_democrats_page_title() ) :
+            the_title( '<h1 class="entry-title">', '</h1>' );
+        endif;
+        ?>
 	</header><!-- .entry-header -->
 
 	<?php jaffrey_democrats_post_thumbnail(); ?>

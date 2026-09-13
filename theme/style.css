@@ -255,7 +255,6 @@ header#masthead {
 :is(:is(header#masthead nav) li):hover,:is(:is(header#masthead nav) li):active {
   color: var(--color-background);
   font-weight: 700;
-  font-size: 0.9rem;
   padding: 0.4rem 0.75rem;
   border-radius: 6px;
   border-bottom: 2px solid rgb(168, 25, 46);
@@ -287,7 +286,6 @@ header#masthead {
 :is(:is(:is(:is(header#masthead #primary-menu) li.menu-item-has-children) > .sub-menu) li) a {
   color: var(--color-primary);
   font-weight: 500;
-  font-size: 0.875rem;
   display: block;
   padding: 0.5rem 1.125rem;
 }
@@ -316,7 +314,7 @@ header#masthead .btn-menu {
   background-color: var(--color-secondary);
   color: var(--color-background);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   padding: 0.5rem 1.25rem;
   border-radius: 6px;
   text-decoration: none;

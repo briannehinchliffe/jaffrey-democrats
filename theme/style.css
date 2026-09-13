@@ -271,6 +271,13 @@ h6 {
   font-size: var(--wp--preset--font-size--medium);
   line-height: 1.7;
 }
+ul {
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 4);
+}
+li::marker {
+  color: var( --color-secondary);
+}
 .admin-bar header#masthead {
   top: var(--wp-admin--admin-bar--height, 32px);
 }

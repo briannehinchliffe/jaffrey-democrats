@@ -54,3 +54,11 @@ h6 {
 	font-size: var(--wp--preset--font-size--medium);
 	line-height: 1.7;
 }
+
+ul {
+	@apply list-disc pl-4;
+}
+
+li::marker {
+	color: var( --color-secondary);
+}

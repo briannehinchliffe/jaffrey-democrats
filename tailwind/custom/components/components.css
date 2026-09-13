@@ -31,7 +31,7 @@ header#masthead {
 			a {
 				color: var(--color-background);
 				font-weight: 500;
-				font-size: 0.9rem;
+				font-size: 1.125rem;
 				text-decoration: none;
 			}
 

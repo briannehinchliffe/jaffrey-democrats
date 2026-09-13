@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Custom gradient border to candidate cards.
 - Lead paragraph styles.
 - External link icon with class.
+- List styles for `ul` and `li`.
 
 ### Changed
 

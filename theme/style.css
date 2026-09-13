@@ -3,7 +3,7 @@
 Theme Name: Jaffrey Democrats
 Theme URI: https://github.com/briannehinchliffe/jaffrey-democrats
 Description: A custom theme for the Democrats of Jaffrey, NH.
-Version: 0.2.0
+Version: 0.3.0
 Author: Brianne Hinchliffe
 Author URI: https://briannehinchliffe.com/
 Text Domain: jaffrey-democrats
@@ -276,7 +276,7 @@ ul {
   padding-left: calc(var(--spacing) * 4);
 }
 li::marker {
-  color: var( --color-secondary);
+  color: var(--color-secondary);
 }
 .admin-bar header#masthead {
   top: var(--wp-admin--admin-bar--height, 32px);

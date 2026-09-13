@@ -15,11 +15,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Multiple gradient color options.
 - `jaffrey_democrats_page_title` function to display H1s within block content.
 - Donate button to header.
+- Custom gradient border to candidate cards.
+- Lead paragraph styles.
+- External link icon with class.
 
 ### Changed
 
 - Header structure and styles updated to match the design.
 - Footer structure and styles updated to match the design.
+- Heading font weights.
+- Button font color.
 
 ### Removed
 

@@ -39,6 +39,8 @@ if ( ! function_exists( 'jaffrey_democrats_page_title' ) ) :
 
         $post = get_post( $post );
 
+        // Assumes block-editor-only content; classic/non-block content intentionally
+        // returns false here and is expected to use a custom template instead.
         if ( ! $post || ! has_blocks( $post->post_content ) ) {
             return false;
         }

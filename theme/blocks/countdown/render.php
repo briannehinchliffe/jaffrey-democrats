@@ -22,21 +22,21 @@ if ( $target_time === false ) {
 }
 
 $target_iso     = $target_time ? $target_time->format( DateTime::ATOM ) : '';
-$target_display = $target_time ? $target_time->format( 'F j, Y' ) : '';
+$target_display = $target_time ? wp_date( 'F j, Y', $target_time->getTimestamp(), $wp_timezone ) : '';
 
 $days    = str_pad( (string) floor( $diff / 86400 ), 2, '0', STR_PAD_LEFT );
 $hours   = str_pad( (string) floor( ( $diff % 86400 ) / 3600 ), 2, '0', STR_PAD_LEFT );
 $minutes = str_pad( (string) floor( ( $diff % 3600 ) / 60 ), 2, '0', STR_PAD_LEFT );
 $seconds = str_pad( (string) floor( $diff % 60 ), 2, '0', STR_PAD_LEFT );
 $units = array(
-        array( 'label' => 'DAYS', 'key' => 'days', 'val' => $days ),
-        array( 'label' => 'HRS',  'key' => 'hours', 'val' => $hours ),
-        array( 'label' => 'MIN',  'key' => 'minutes', 'val' => $minutes ),
-        array( 'label' => 'SEC',  'key' => 'seconds', 'val' => $seconds ),
+        array( 'label' => __( 'DAYS', 'jaffrey-democrats' ), 'key' => 'days', 'val' => $days ),
+        array( 'label' => __( 'HRS', 'jaffrey-democrats' ),  'key' => 'hours', 'val' => $hours ),
+        array( 'label' => __( 'MIN', 'jaffrey-democrats' ),  'key' => 'minutes', 'val' => $minutes ),
+        array( 'label' => __( 'SEC', 'jaffrey-democrats' ),  'key' => 'seconds', 'val' => $seconds ),
 );
 
 $wrapper_attributes = get_block_wrapper_attributes( array(
-        'class' => 'wp-block-jaffrey-democrats-countdown flex items-center justify-[inherit] gap-8 flex-wrap w-full',
+        'class' => 'wp-block-jaffrey-democrats-countdown flex items-center justify-start gap-8 flex-wrap',
 ) );
 ?>
 
@@ -75,9 +75,7 @@ $wrapper_attributes = get_block_wrapper_attributes( array(
 		<?php echo esc_html( $expired_text ); ?>
 	</span>
 
-    <div
-            class="countdown-timer <?php echo $passed ? 'hidden' : 'flex'; ?> items-start gap-2.5"
-    >
+    <div class="countdown-timer <?php echo $passed ? 'hidden' : 'flex'; ?> items-start gap-2.5" role="timer">
         <?php foreach ( $units as $i => $unit ) : ?>
             <div class="flex items-start gap-2.5">
                 <div class="text-center">

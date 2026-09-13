@@ -63,6 +63,27 @@
 	--tw-prose-invert-pre-bg: --theme(--color-background, initial);
 	--tw-prose-invert-th-borders: --theme(--color-background, initial);
 	--tw-prose-invert-td-borders: --theme(--color-background, initial);
+
+	& :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	& :where(p, ul, ol):not(:where([class~="not-prose"] *)) {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	& :where(a):not(:where([class~="not-prose"] *)) {
+		text-decoration: inherit;
+		font-weight: inherit;
+	}
+
+	& :where(strong, b):not(:where([class~="not-prose"] *)) {
+		font-weight: inherit;
+	}
 }
 
 /**

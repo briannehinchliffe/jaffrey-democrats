@@ -284,6 +284,10 @@ li::marker {
 header#masthead {
   background-color: var(--color-primary);
 }
+:is(header#masthead nav) ul {
+  list-style: none;
+  padding: 0;
+}
 :is(header#masthead nav) li {
   padding: 0.4rem 0.75rem;
   border-radius: 6px;

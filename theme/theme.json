@@ -122,6 +122,11 @@
 					"slug": "primary-secondary",
 					"gradient": "linear-gradient(135deg, rgba(13, 46, 110, 0.85) 0%, rgba(10, 26, 64, 0.7) 60%, rgba(168, 25, 46, 0.3) 100%)",
 					"name": "Primary color to Secondary color"
+				},
+				{
+					"slug": "primary-secondary",
+					"gradient": "linear-gradient(135deg, var(--wp--preset--color--secondary) 0%, #7A1020 50%, var(--wp--preset--color--primary) 100%)",
+					"name": "Secondary color to Primary color"
 				}
 			],
 			"duotone": [

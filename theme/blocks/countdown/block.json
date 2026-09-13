@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "jaffrey-democrats/countdown",
+	"version": "1.0.0",
+	"title": "Countdown Ticker",
+	"category": "widgets",
+	"icon": "clock",
+	"description": "Displays an animated countdown timer with event labels.",
+	"attributes": {
+		"label": {
+			"type": "string",
+			"default": "GENERAL ELECTION"
+		},
+		"targetDate": {
+			"type": "string",
+			"default": "2026-11-03T00:07:00"
+		},
+		"expiredText": {
+			"type": "string",
+			"default": "Go vote today!"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["left", "center", "right"],
+		"layout": true
+	},
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

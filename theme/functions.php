@@ -223,30 +223,13 @@ function jaffrey_democrats_modify_heading_levels( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'jaffrey_democrats_modify_heading_levels', 10, 2 );
 
 /**
- * Register block styles.
+ * Register a custom Countdown Timer block.
  *
  * @return void
  */
-function jaffrey_democrats_register_block_styles() {
-    register_block_style(
-        'core/button',
-        array(
-            'name'  => 'fill-red',
-            'label' => __( 'Red Fill', 'jaffrey-democrats' ),
-        )
-    );
-
-    register_block_style(
-        'core/button',
-        array(
-            'name'  => 'fill-opaque',
-            'label' => __( 'Opaque Fill', 'jaffrey-democrats' ),
-        )
-    );
-
-    
-}
-add_action( 'init', 'jaffrey_democrats_register_block_styles' );
+add_action( 'init', function() {
+    register_block_type( __DIR__ . '/blocks/countdown' );
+} );
 
 /**
  * Custom template tags for this theme.

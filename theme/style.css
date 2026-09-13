@@ -26,6 +26,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif,
 	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 	"Noto Color Emoji";
+  --font-serif: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+	serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 	"Liberation Mono", "Courier New", monospace;
   --color-red-700: oklch(50.5% 0.213 27.518);
@@ -44,11 +46,21 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --container-7xl: 80rem;
   --text-sm: 0.875rem;
   --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
+  --font-weight-light: 300;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
+  --font-weight-black: 900;
   --tracking-wider: 0.05em;
+  --leading-tight: 1.25;
+  --radius-xl: 0.75rem;
   --blur-sm: 8px;
   --default-transition-duration: 150ms;
   --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -958,11 +970,20 @@ header#masthead .custom-logo {
 .prose .wp-block-table tfoot {
   border-top-width: 1px;
 }
+.mt-2 {
+  margin-top: calc(var(--spacing) * 2);
+}
+.mt-2\.5 {
+  margin-top: calc(var(--spacing) * 2.5);
+}
 .mt-10 {
   margin-top: calc(var(--spacing) * 10);
 }
 .mb-4 {
   margin-bottom: calc(var(--spacing) * 4);
+}
+.mb-\[0\.2rem\] {
+  margin-bottom: 0.2rem;
 }
 .block {
   display: block;
@@ -979,8 +1000,14 @@ header#masthead .custom-logo {
 .hidden {
   display: none;
 }
+.inline {
+  display: inline;
+}
 .h-20 {
   height: calc(var(--spacing) * 20);
+}
+.w-full {
+  width: 100%;
 }
 .max-w-7xl {
   max-width: var(--container-7xl);
@@ -990,6 +1017,9 @@ header#masthead .custom-logo {
 }
 .max-w-none {
   max-width: none;
+}
+.min-w-\[68px\] {
+  min-width: 68px;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -1018,11 +1048,20 @@ header#masthead .custom-logo {
 .justify-between {
   justify-content: space-between;
 }
+.justify-center {
+  justify-content: center;
+}
 .gap-2 {
   gap: calc(var(--spacing) * 2);
 }
+.gap-2\.5 {
+  gap: calc(var(--spacing) * 2.5);
+}
 .gap-3 {
   gap: calc(var(--spacing) * 3);
+}
+.gap-3\.5 {
+  gap: calc(var(--spacing) * 3.5);
 }
 .gap-4 {
   gap: calc(var(--spacing) * 4);
@@ -1032,6 +1071,9 @@ header#masthead .custom-logo {
 }
 .gap-10 {
   gap: calc(var(--spacing) * 10);
+}
+.rounded-xl {
+  border-radius: var(--radius-xl);
 }
 .border {
   border-style: var(--tw-border-style);
@@ -1049,6 +1091,14 @@ header#masthead .custom-logo {
     border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
   }
 }
+.border-white\/20 {
+  border-color: color-mix(in srgb, #fff 20%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .border-white\/20 {
+    border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+  }
+}
 .bg-primary {
   background-color: var(--color-primary);
 }
@@ -1063,17 +1113,31 @@ header#masthead .custom-logo {
     background-color: color-mix(in oklab, var(--color-white) 97%, transparent);
   }
 }
+.bg-white\/\[0\.07\] {
+  background-color: color-mix(in srgb, #fff 7.000000000000001%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-white\/\[0\.07\] {
+    background-color: color-mix(in oklab, var(--color-white) 7.000000000000001%, transparent);
+  }
+}
 .p-0 {
   padding: calc(var(--spacing) * 0);
 }
 .p-2 {
   padding: calc(var(--spacing) * 2);
 }
+.px-3 {
+  padding-inline: calc(var(--spacing) * 3);
+}
 .px-5 {
   padding-inline: calc(var(--spacing) * 5);
 }
 .px-6 {
   padding-inline: calc(var(--spacing) * 6);
+}
+.py-3\.5 {
+  padding-block: calc(var(--spacing) * 3.5);
 }
 .py-4 {
   padding-block: calc(var(--spacing) * 4);
@@ -1084,20 +1148,78 @@ header#masthead .custom-logo {
 .pt-6 {
   padding-top: calc(var(--spacing) * 6);
 }
+.text-center {
+  text-align: center;
+}
 .font-sans {
   font-family: var(--font-sans);
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.text-base {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
 }
 .text-sm {
   font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-sm--line-height));
 }
+.text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+.text-\[0\.65rem\] {
+  font-size: 0.65rem;
+}
+.text-\[0\.72rem\] {
+  font-size: 0.72rem;
+}
+.text-\[2\.1rem\] {
+  font-size: 2.1rem;
+}
+.leading-none {
+  --tw-leading: 1;
+  line-height: 1;
+}
+.leading-tight {
+  --tw-leading: var(--leading-tight);
+  line-height: var(--leading-tight);
+}
+.font-black {
+  --tw-font-weight: var(--font-weight-black);
+  font-weight: var(--font-weight-black);
+}
 .font-bold {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
 }
+.font-extrabold {
+  --tw-font-weight: var(--font-weight-extrabold);
+  font-weight: var(--font-weight-extrabold);
+}
+.font-light {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+}
+.tracking-\[-0\.01em\] {
+  --tw-tracking: -0.01em;
+  letter-spacing: -0.01em;
+}
+.tracking-\[0\.12em\] {
+  --tw-tracking: 0.12em;
+  letter-spacing: 0.12em;
+}
 .tracking-wider {
   --tw-tracking: var(--tracking-wider);
   letter-spacing: var(--tracking-wider);
+}
+.text-\[\#74aaff\] {
+  color: #74aaff;
 }
 .text-\[\#93b4e8\] {
   color: #93b4e8;
@@ -1108,11 +1230,30 @@ header#masthead .custom-logo {
 .text-white {
   color: var(--color-white);
 }
+.text-white\/25 {
+  color: color-mix(in srgb, #fff 25%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .text-white\/25 {
+    color: color-mix(in oklab, var(--color-white) 25%, transparent);
+  }
+}
+.text-white\/50 {
+  color: color-mix(in srgb, #fff 50%, transparent);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .text-white\/50 {
+    color: color-mix(in oklab, var(--color-white) 50%, transparent);
+  }
+}
 .uppercase {
   text-transform: uppercase;
 }
 .italic {
   font-style: italic;
+}
+.\[font-variant-numeric\:tabular-nums\] {
+  font-variant-numeric: tabular-nums;
 }
 .no-underline {
   text-decoration-line: none;
@@ -1255,6 +1396,10 @@ header#masthead .custom-logo {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-tracking {
   syntax: "*";
   inherits: false;
@@ -1374,6 +1519,7 @@ header#masthead .custom-logo {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
       --tw-border-style: solid;
+      --tw-leading: initial;
       --tw-tracking: initial;
       --tw-outline-style: solid;
       --tw-backdrop-blur: initial;

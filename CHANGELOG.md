@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Countdown custom block.
 - Multiple gradient color options.
 - `jaffrey_democrats_page_title` function to display H1s within block content.
+- Donate button to header.
 
 ### Changed
 

@@ -16,22 +16,22 @@
 				{
 					"name": "Small",
 					"slug": "small",
-					"size": "2px"
+					"size": "6px"
 				},
 				{
 					"name": "Medium",
 					"slug": "medium",
-					"size": "4px"
+					"size": "8px"
 				},
 				{
 					"name": "Large",
 					"slug": "large",
-					"size": "6px"
+					"size": "10px"
 				},
 				{
 					"name": "Extra Large",
 					"slug": "x-large",
-					"size": "8px"
+					"size": "12px"
 				},
 				{
 					"name": "2X Large",
@@ -298,9 +298,9 @@
 				{
 					"fluid": {
 						"min": "1.25rem",
-						"max": "1.4rem"
+						"max": "1.5rem"
 					},
-					"size": "1.4rem",
+					"size": "1.5rem",
 					"slug": "large",
 					"name": "Large"
 				},
@@ -449,14 +449,6 @@
 					"color": "var(--wp--preset--color--accent)",
 					"width": "2px",
 					"radius": "var(--wp--preset--border-radius--medium)"
-				},
-				"variations": {
-					"short": {
-						"border": {
-							"color": "var(--wp--preset--color--accent)",
-							"width": "4px"
-						}
-					}
 				}
 			},
 			"core/quote": {
@@ -480,7 +472,7 @@
 				},
 				"border": {
 					"left": {
-						"color": "var(--wp--preset--color--accent)",
+						"color": "var(--wp--preset--color--primary)",
 						"width": "4px",
 						"style": "solid"
 					}

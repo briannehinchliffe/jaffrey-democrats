@@ -339,6 +339,15 @@
 					"size": "3rem",
 					"slug": "xxxx-large",
 					"name": "4X Large"
+				},
+				{
+					"fluid": {
+						"min": "2.5rem",
+						"max": "4.2rem"
+					},
+					"size": "4.2rem",
+					"slug": "huge",
+					"name": "Huge"
 				}
 			]
 		},

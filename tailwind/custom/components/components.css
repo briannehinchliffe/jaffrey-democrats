@@ -22,11 +22,6 @@ header#masthead {
 
 	nav {
 
-		ul {
-			list-style: none;
-			padding: 0;
-		}
-
 		li {
 			padding: 0.4rem 0.75rem;
 			border-radius: 6px;
@@ -275,19 +270,10 @@ header#masthead {
  */
 
 footer {
-	aside {
-		a {
-			@apply text-sm text-blue-200 transition-colors hover:text-white;
-		}
-	}
 
-	.footer-menu {
+	nav {
 		a {
-			@apply text-sm text-blue-200 transition-colors hover:text-white;
-		}
-
-		li + li {
-			@apply mt-2.5;
+			@apply hover:text-white hover:underline;
 		}
 	}
 }

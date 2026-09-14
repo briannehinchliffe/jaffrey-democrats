@@ -31,7 +31,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
   --color-red-700: oklch(50.5% 0.213 27.518);
-  --color-blue-200: oklch(88.2% 0.059 254.128);
+  --color-blue-300: oklch(80.9% 0.105 251.813);
   --color-neutral-100: oklch(97% 0 0);
   --color-neutral-200: oklch(92.2% 0 0);
   --color-neutral-300: oklch(87% 0 0);
@@ -271,7 +271,7 @@ h6 {
   font-size: var(--wp--preset--font-size--medium);
   line-height: 1.7;
 }
-ul {
+ul.wp-block-list {
   list-style-type: disc;
   padding-left: calc(var(--spacing) * 4);
 }
@@ -283,10 +283,6 @@ li::marker {
 }
 header#masthead {
   background-color: var(--color-primary);
-}
-:is(header#masthead nav) ul {
-  list-style: none;
-  padding: 0;
 }
 :is(header#masthead nav) li {
   padding: 0.4rem 0.75rem;
@@ -476,34 +472,15 @@ header#masthead .custom-logo {
   float: right;
   margin-left: calc(var(--spacing) * 8);
 }
-:is(footer aside) a {
-  font-size: var(--text-sm);
-  line-height: var(--tw-leading, var(--text-sm--line-height));
-  color: var(--color-blue-200);
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-}
 @media (hover: hover) {
-  :is(:is(footer aside) a):hover {
+  :is(:is(footer nav) a):hover {
     color: var(--color-white);
   }
 }
-:is(footer .footer-menu) a {
-  font-size: var(--text-sm);
-  line-height: var(--tw-leading, var(--text-sm--line-height));
-  color: var(--color-blue-200);
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-}
 @media (hover: hover) {
-  :is(:is(footer .footer-menu) a):hover {
-    color: var(--color-white);
+  :is(:is(footer nav) a):hover {
+    text-decoration-line: underline;
   }
-}
-:is(footer .footer-menu) li + li {
-  margin-top: calc(var(--spacing) * 2.5);
 }
 .visible {
   visibility: visible;
@@ -1274,6 +1251,9 @@ header#masthead .custom-logo {
 .text-background {
   color: var(--color-background);
 }
+.text-secondary {
+  color: var(--color-secondary);
+}
 .text-white {
   color: var(--color-white);
 }
@@ -1371,6 +1351,11 @@ header#masthead .custom-logo {
 @media (hover: hover) {
   .hover\:text-\[\#93b4e8\]:hover {
     color: #93b4e8;
+  }
+}
+@media (hover: hover) {
+  .hover\:text-blue-300:hover {
+    color: var(--color-blue-300);
   }
 }
 @media (hover: hover) {

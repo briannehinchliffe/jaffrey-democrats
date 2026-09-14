@@ -95,7 +95,7 @@
 
                 <div style="margin-top: 1.5rem; padding: 0.75rem; background-color: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <p style="color: rgb(138, 167, 212); font-size: 0.8rem; margin-bottom: 0.4rem;"><?php esc_html_e( 'Affiliated with:', 'jaffrey-democrats' ); ?></p>
-                    <a href="<?php echo esc_url( 'https://nhdp.org' ); ?>" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#93b4e8] underline hover:text-[#93b4e8] hover:underline">
+                    <a href="<?php echo esc_url( 'https://nhdp.org' ); ?>" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#93b4e8] no-underline hover:text-[#93b4e8] hover:underline">
                         <?php esc_html_e( 'NH Democratic Party (NHDP) →', 'jaffrey-democrats' ); ?>
                     </a>
                 </div>
@@ -107,6 +107,9 @@
         <div class="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-6">
             <p class="text-sm text-[#93b4e8]">
                 &copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>.
+            </p>
+            <p class="text-sm text-[#93b4e8]">
+                <?php printf( esc_html__( 'Made with %1$s by %2$s', 'jaffrey-democrats' ), '<span class="text-secondary">&hearts;</span>', '<a href="' . esc_url( 'https://briannehinchliffe.com/' ) . '" target="_blank" class="hover:text-blue-300 no-underline">' . esc_html( 'Brianne Hinchliffe' ) . '</a>' ); ?>
             </p>
             <?php if ( has_nav_menu( 'privacy' ) ) : ?>
                 <nav aria-label="<?php esc_attr_e( 'Privacy Menu', 'jaffrey-democrats' ); ?>">

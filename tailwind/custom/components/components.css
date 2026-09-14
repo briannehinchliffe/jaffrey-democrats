@@ -21,7 +21,6 @@ header#masthead {
 	background-color: var(--color-primary);
 
 	nav {
-
 		li {
 			padding: 0.4rem 0.75rem;
 			border-radius: 6px;
@@ -270,7 +269,6 @@ header#masthead {
  */
 
 footer {
-
 	nav {
 		a {
 			@apply hover:text-white hover:underline;

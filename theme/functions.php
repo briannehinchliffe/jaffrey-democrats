@@ -15,7 +15,7 @@ if ( ! defined( 'JAFFREY_DEMOCRATS_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'JAFFREY_DEMOCRATS_VERSION', '0.5.0' );
+	define( 'JAFFREY_DEMOCRATS_VERSION', '0.6.0' );
 }
 
 if ( ! defined( 'JAFFREY_DEMOCRATS_TYPOGRAPHY_CLASSES' ) ) {

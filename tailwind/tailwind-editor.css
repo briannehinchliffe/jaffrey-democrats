@@ -27,3 +27,7 @@
 /**
  * Add your editor styles below:
  */
+
+.wp-block-post-title {
+	@apply text-black;
+}

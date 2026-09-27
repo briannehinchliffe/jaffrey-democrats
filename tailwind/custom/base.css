@@ -70,52 +70,39 @@ li::marker {
 	color: var(--color-secondary);
 }
 
-
 .leaflet-landing {
 	--leaflet-teal: #1e6374;
 	--leaflet-teal-dark: #174e5c;
 	--leaflet-teal-light: #e8f4f7;
 	--leaflet-red: #c0392b;
-	--leaflet-body: #2D3748;
+	--leaflet-body: #2d3748;
 
-	font-family: 'Source Sans 3', sans-serif;
+	font-family: var(--font-sans);
 	background-color: #ffffff;
 }
 
-/*!* Header band *!*/
-/*.leaflet-landing .is-style-leaflet-header {*/
-/*	background-color: var(--leaflet-teal);*/
-/*	padding: 1.75rem 2rem;*/
-/*}*/
-
-/*.leaflet-landing .is-style-leaflet-header h1 {*/
-/*	font-family: 'Merriweather', serif;*/
-/*	color: #ffffff;*/
-/*	font-size: clamp(1.6rem, 4vw, 2.2rem);*/
-/*	font-weight: 900;*/
-/*}*/
-
-/*.leaflet-landing .is-style-leaflet-header p {*/
-/*	color: rgba(255, 255, 255, 0.88);*/
-/*	font-weight: 600;*/
-/*}*/
-
 /* Leaflet nav — top-level items */
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation-item__content {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation-item__content {
 	color: rgba(255, 255, 255, 0.9);
 	font-weight: 600;
 	font-size: 0.88rem;
-	font-family: 'Source Sans 3', sans-serif;
+	font-family: var(--font-sans);
 	padding: 0.4rem 0.6rem;
 	border-radius: 6px;
 }
 
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation-item__content:hover {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation-item__content:hover {
 	background-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Submenu dropdown panel */
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation__submenu-container {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation__submenu-container {
 	background: #ffffff;
 	border-radius: 8px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -123,7 +110,10 @@ li::marker {
 	min-width: 160px;
 }
 
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation__submenu-container
+	.wp-block-navigation-item__content {
 	color: var(--leaflet-teal);
 	font-weight: 600;
 	font-size: 0.88rem;
@@ -131,38 +121,36 @@ li::marker {
 	border-radius: 0;
 }
 
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation__submenu-container
+	.wp-block-navigation-item__content:hover {
 	background-color: var(--leaflet-teal-light);
 }
 
 /* Submenu toggle chevron */
-.leaflet-landing .wp-block-navigation.is-style-leaflet-nav .wp-block-navigation__submenu-icon svg {
+.leaflet-landing
+	.wp-block-navigation.is-style-leaflet-nav
+	.wp-block-navigation__submenu-icon
+	svg {
 	stroke: rgba(255, 255, 255, 0.9);
 }
 
-/* Issue headline */
-.leaflet-landing h1,h2,h3,h4,h5,h6 {
+/* Leaflet Headings */
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: var(--leaflet-teal);
 	line-height: 1.25;
 }
 
-/* "Did you know?" label */
-.leaflet-landing .is-style-leaflet-section-label {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-family: 'Merriweather', serif;
-	font-size: 1.2rem;
-	font-weight: 900;
-	color: var(--leaflet-teal);
-}
-
 .leaflet-landing p {
 	color: var(--leaflet-body);
-
 }
 
-/* Source badge */
+/* Source Button */
 .leaflet-landing .is-style-leaflet-source-button {
 	display: inline-flex;
 	align-items: center;
@@ -180,57 +168,60 @@ li::marker {
 /* Divider */
 .leaflet-landing .is-style-leaflet-divider {
 	height: 3px;
-	background: linear-gradient(to right, var(--leaflet-teal), color-mix(in srgb, var(--leaflet-teal) 27%, transparent), transparent);
- 	margin: 0 auto 3rem;
+	background: linear-gradient(
+		to right,
+		var(--leaflet-teal),
+		color-mix(in srgb, var(--leaflet-teal) 27%, transparent),
+		transparent
+	);
+	margin: 0 auto 3rem;
 	border-radius: 2px;
 	border-top: none;
 }
 
-/* Representatives callout */
-.leaflet-landing .is-style-leaflet-rep-callout {
-	background-color: #fff8f8;
-	border: 1px solid #f5c0c0;
-	border-left: 4px solid var(--leaflet-red);
-	border-radius: 10px;
-	padding: 1.5rem 1.75rem;
-}
-
-.leaflet-landing .leaflet-rep-callout-label {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-size: 0.8rem;
-	font-weight: 800;
-	color: var(--leaflet-red);
-	text-transform: uppercase;
-	letter-spacing: 0.07em;
-	margin-bottom: 1rem;
-}
-
-/* Footer CTA */
-.leaflet-landing .is-style-leaflet-footer {
-	background-color: var(--leaflet-teal-dark);
-	padding: 3.5rem 2rem;
-	text-align: center;
-}
-
-.leaflet-landing .is-style-leaflet-footer h2 {
-	font-family: 'Merriweather', serif;
-	color: #ffffff;
-	font-weight: 900;
-}
-
-/* Town filter pills */
-.leaflet-landing .is-style-leaflet-pill {
+/* Leaflet Buttons */
+.leaflet-landing .is-style-leaflet-pill .wp-block-button__link {
 	padding: 0.55rem 1.4rem;
 	border-radius: 100px;
 	border: 2px solid rgba(255, 255, 255, 0.5);
 	background-color: transparent;
 	color: #ffffff;
 	font-weight: 700;
-	font-size: 0.9rem;
+	font-size: var(--wp--preset--font-size--medium);
 }
 
-.leaflet-landing .is-style-leaflet-pill:hover {
-	border-color: #ffffff;
+.leaflet-landing .is-style-leaflet-pill .wp-block-button__link:hover {
+	color: var(--leaflet-teal) !important;
+	background-color: #ffffff;
+}
+
+.leaflet-landing .is-layout-constrained {
+	/*
+        Center floated images on small screens.
+    */
+	@media (max-width: 600px) {
+		> .alignleft {
+			float: none !important;
+			margin: var(--wp--preset--spacing--40) auto;
+		}
+
+		> .alignright {
+			float: none;
+			margin: var(--wp--preset--spacing--40) auto;
+		}
+	}
+
+	/*
+        Prevent floated images from going outside of the contentSize area.
+        calc( var(--wp--style--global--content-size) + var(--wp--custom--spacing--gap) * 2 )
+    */
+	@media (min-width: calc(1000px + 24px * 2)) {
+		> .alignleft {
+			margin-left: calc((100% - 930px) / 2);
+		}
+
+		> .alignright {
+			margin-right: calc((100% - 930px) / 2);
+		}
+	}
 }

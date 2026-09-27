@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-27
+
 ### Added
 
 - Brand colors and font families to `theme.json`.
@@ -19,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Lead paragraph styles.
 - External link icon with class.
 - List styles for `ul` and `li`.
+- Leaflet Landing Page Template and styles
 
 ### Changed
 

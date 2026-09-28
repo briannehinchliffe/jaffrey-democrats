@@ -27,7 +27,7 @@
  * replace `-neutral` with `-jaffrey-democrats`.
  */
 @utility prose-jaffrey-democrats {
-	--tw-prose-body: --theme(--color-foreground, initial);
+	--tw-prose-body: --theme(--color-primary, initial);
 	--tw-prose-headings: --theme(--color-foreground, initial);
 	--tw-prose-lead: --theme(--color-foreground, initial);
 	--tw-prose-links: --theme(--color-primary, initial);

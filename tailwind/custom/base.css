@@ -62,6 +62,10 @@ h6 {
 	line-height: 1.7;
 }
 
+ol.wp-block-list {
+	@apply pl-4;
+}
+
 ul.wp-block-list {
 	@apply list-disc pl-4;
 }

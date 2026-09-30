@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - Leaflet Landing Page mobile navigation styling.
+- Theme Screenshot.
 
 ## [1.0.0] - 2026-09-27
 

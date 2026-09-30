@@ -144,7 +144,7 @@ li::marker {
 .leaflet-landing
 	.wp-block-navigation__responsive-container.is-menu-open
 	.wp-block-navigation__container
-	> li {
+	> li:not(:last-child) {
 	border-bottom: 1px solid var(--leaflet-teal);
 }
 

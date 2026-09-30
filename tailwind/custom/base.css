@@ -140,6 +140,33 @@ li::marker {
 	stroke: rgba(255, 255, 255, 0.9);
 }
 
+/* Reset top-level item color inside the mobile modal — white-on-white was invisible */
+.leaflet-landing
+	.wp-block-navigation__responsive-container
+	.wp-block-navigation__container
+	> li {
+	border-bottom: 1px solid var(--leaflet-teal);
+}
+
+.leaflet-landing
+	.wp-block-navigation__responsive-container
+	.wp-block-navigation-item__content {
+	color: var(--leaflet-teal) !important;
+}
+
+.leaflet-landing
+	.wp-block-navigation__responsive-container
+	.wp-block-navigation__submenu-container {
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+.leaflet-landing
+	.wp-block-navigation__responsive-container
+	.wp-block-navigation__responsive-container-close {
+	color: var(--leaflet-teal);
+}
+
 /* Leaflet Headings */
 h2,
 h3,

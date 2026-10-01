@@ -15,7 +15,7 @@ if ( ! defined( 'JAFFREY_DEMOCRATS_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'JAFFREY_DEMOCRATS_VERSION', '1.0.1' );
+	define( 'JAFFREY_DEMOCRATS_VERSION', '1.1.0' );
 }
 
 if ( ! defined( 'JAFFREY_DEMOCRATS_TYPOGRAPHY_CLASSES' ) ) {
@@ -204,6 +204,15 @@ function jaffrey_democrats_tinymce_add_class( $settings ) {
 add_filter( 'tiny_mce_before_init', 'jaffrey_democrats_tinymce_add_class' );
 
 /**
+ * Register a custom Countdown Timer block.
+ *
+ * @return void
+ */
+add_action( 'init', function() {
+    register_block_type( __DIR__ . '/blocks/countdown' );
+} );
+
+/**
  * Register block styles.
  *
  * @return void
@@ -224,19 +233,8 @@ function jaffrey_democrats_register_block_styles() {
             'label' => __( 'Opaque Fill', 'jaffrey-democrats' ),
         )
     );
-
-
 }
 add_action( 'init', 'jaffrey_democrats_register_block_styles' );
-
-/**
- * Register a custom Countdown Timer block.
- *
- * @return void
- */
-add_action( 'init', function() {
-    register_block_type( __DIR__ . '/blocks/countdown' );
-} );
 
 /**
  * Custom template tags for this theme.

@@ -3,12 +3,12 @@
 Theme Name: Jaffrey Democrats
 Theme URI: https://github.com/briannehinchliffe/jaffrey-democrats
 Description: A custom theme for the Democrats of Jaffrey, NH.
-Version: 1.0.1
+Version: 1.1.0
 Author: Brianne Hinchliffe
 Author URI: https://briannehinchliffe.com/
 Text Domain: jaffrey-democrats
-Requires at least: 7.1
-Requires PHP: 8.0
+Requires at least: 7.1.2
+Requires PHP: 8.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -46,6 +46,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --text-2xl--line-height: calc(2 / 1.5);
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
   --font-weight-light: 300;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
@@ -745,6 +747,9 @@ header#masthead .custom-logo {
 .justify-start {
   justify-content: flex-start;
 }
+.gap-1\.5 {
+  gap: calc(var(--spacing) * 1.5);
+}
 .gap-2 {
   gap: calc(var(--spacing) * 2);
 }
@@ -854,6 +859,10 @@ header#masthead .custom-logo {
 .text-2xl {
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.text-5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
 }
 .text-base {
   font-size: var(--text-base);

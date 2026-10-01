@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-09-20
+
+### Added
+
+- Secondary option for the countdown block to display day count only.
+
 ## [1.0.1] - 2026-09-29
 
 ### Added

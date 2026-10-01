@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"textdomain": "jaffrey-democrats",
 	"name": "jaffrey-democrats/countdown",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"title": "Countdown Ticker",
 	"category": "widgets",
 	"icon": "clock",
@@ -20,12 +20,25 @@
 		"expiredText": {
 			"type": "string",
 			"default": "Go vote today!"
+		},
+		"displayMode": {
+			"type": "string",
+			"enum": ["full", "daysOnly"],
+			"default": "full"
+		},
+		"daysCaption": {
+			"type": "string",
+			"default": "DAYS TO GO"
 		}
 	},
 	"supports": {
 		"html": false,
 		"align": ["left", "center", "right"],
-		"layout": true
+		"layout": true,
+		"color": {
+			"background": true,
+			"text": true
+		}
 	},
 	"editorScript": "file:./editor.js",
 	"viewScript": "file:./view.js",

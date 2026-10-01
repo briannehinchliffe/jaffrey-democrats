@@ -3,6 +3,7 @@
 		const targetStr = block.getAttribute('data-target-date');
 		if (!targetStr) return;
 
+		const isDaysOnly = block.classList.contains('is-days-only');
 		const target = new Date(targetStr).getTime();
 		const daysEl = block.querySelector('.countdown-days');
 		const hoursEl = block.querySelector('.countdown-hours');
@@ -21,10 +22,12 @@
 				return true; // expired
 			}
 
-			if (daysEl)
-				daysEl.textContent = String(
-					Math.floor(diff / 86400000)
-				).padStart(2, '0');
+			if (daysEl) {
+				const daysValue = Math.floor(diff / 86400000);
+				daysEl.textContent = isDaysOnly
+					? String(daysValue)
+					: String(daysValue).padStart(2, '0');
+			}
 			if (hoursEl)
 				hoursEl.textContent = String(
 					Math.floor((diff % 86400000) / 3600000)

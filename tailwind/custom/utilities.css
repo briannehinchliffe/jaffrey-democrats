@@ -43,3 +43,12 @@
 		mask-position: center;
 	}
 }
+
+@media (max-width: 1200px) {
+	.wp-block-columns.columns-break-wide {
+		flex-wrap: wrap !important;
+	}
+	.wp-block-columns.columns-break-wide > .wp-block-column {
+		flex-basis: 100% !important;
+	}
+}

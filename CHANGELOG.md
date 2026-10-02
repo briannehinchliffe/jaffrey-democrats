@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-## [1.1.0] - 2026-09-20
+## [1.1.1] - 2026-09-20
+
+### Added
+
+- Utility class `.column-break-wide` to change breakpoint for column block wrapping.
+
+## [1.1.0] - 2026-09-30
 
 ### Added
 

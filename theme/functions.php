@@ -15,7 +15,7 @@ if ( ! defined( 'JAFFREY_DEMOCRATS_VERSION' ) ) {
 	 * to create your production build, the value below will be replaced in the
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'JAFFREY_DEMOCRATS_VERSION', '1.1.1' );
+	define( 'JAFFREY_DEMOCRATS_VERSION', '1.2.0' );
 }
 
 if ( ! defined( 'JAFFREY_DEMOCRATS_TYPOGRAPHY_CLASSES' ) ) {
@@ -81,6 +81,7 @@ if ( ! function_exists( 'jaffrey_democrats_setup' ) ) :
 			array(
 				'primary' => __( 'Primary', 'jaffrey-democrats' ),
 				'footer' => __( 'Footer Menu', 'jaffrey-democrats' ),
+                'button' => __( 'Button Menu', 'jaffrey-democrats' ),
 				'action' => __( 'Action Menu', 'jaffrey-democrats' ),
 				'privacy' => __( 'Privacy Menu', 'jaffrey-democrats' ),
 			)

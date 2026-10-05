@@ -45,7 +45,20 @@
                     );
                     ?>
                 </nav>
-                <a href="https://secure.actblue.com/donate/jaffreydems" target="_blank" class="btn-menu"><?php esc_html_e( 'Donate', 'jaffrey-democrats' ); ?></a>
+                <nav class="items-center gap-8 md:flex" aria-label="<?php esc_attr_e( 'Call to Action Menu', 'jaffrey-democrats' ); ?>">
+                    <?php
+                    wp_nav_menu(
+                            array(
+                                    'theme_location' => 'button',
+                                    'menu_id'        => 'button-menu',
+                                    'container'      => false,
+                                    'menu_class'     => 'flex items-center gap-8',
+                                    'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                    'depth'          => 2,
+                            )
+                    );
+                    ?>
+                </nav>
 
                 <!-- Mobile Menu Toggle Button -->
                 <button id="menu-toggle" class="p-2 text-background focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-white md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="<?php echo esc_attr__( 'Toggle menu', 'jaffrey-democrats' ); ?>">

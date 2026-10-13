@@ -142,17 +142,17 @@ li::marker {
 
 /* Mobile Menu Styles */
 .leaflet-landing
-.wp-block-navigation__responsive-container.is-menu-open
-.wp-block-navigation__container
-> li {
+	.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__container
+	> li {
 	width: 100%;
 	align-self: stretch;
 }
 
 .leaflet-landing
-.wp-block-navigation__responsive-container.is-menu-open
-.wp-block-navigation__container
-> li:not(:last-child) {
+	.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__container
+	> li:not(:last-child) {
 	border-bottom: 1px solid var(--leaflet-teal);
 	padding-block: 0.5rem;
 }

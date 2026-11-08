@@ -52,3 +52,28 @@
 		flex-basis: 100% !important;
 	}
 }
+
+.wp-block-columns.is-style-card-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-items: stretch;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	> .wp-block-column {
+		flex-basis: auto !important;
+		width: auto;
+		min-width: 0;
+		margin: 0;
+	}
+
+	> .wp-block-column:not(:has(*)) {
+		display: none;
+	}
+}

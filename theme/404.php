@@ -148,30 +148,30 @@ $popular_links = array(
         <?php endif; ?>
 
         <!-- Bottom CTA Banner -->
-        <section class="bg-red-800 py-14 text-center text-white">
-            <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-                <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-                    <?php esc_html_e( 'Ready to Make a Difference?', 'jaffrey-democrats' ); ?>
-                </h2>
-                <p class="mt-3 text-base text-red-100">
-                    <?php esc_html_e( 'Join the Jaffrey Democrats and help build a better future for our community.', 'jaffrey-democrats' ); ?>
-                </p>
-                <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
-                    <a
-                            href="<?php echo esc_url( home_url( '/volunteer/' ) ); ?>"
-                            class="rounded-md bg-white px-6 py-2.5 text-sm font-semibold text-red-900 shadow-sm transition hover:bg-red-50"
-                    >
-                        <?php esc_html_e( 'Volunteer', 'jaffrey-democrats' ); ?>
-                    </a>
-                    <a
-                            href="<?php echo esc_url( home_url( '/donate/' ) ); ?>"
-                            class="rounded-md border border-white/70 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-                    >
-                        <?php esc_html_e( 'Donate', 'jaffrey-democrats' ); ?>
-                    </a>
-                </div>
-            </div>
-        </section>
+<!--        <section class="bg-red-800 py-14 text-center text-white">-->
+<!--            <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">-->
+<!--                <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl">-->
+<!--                    --><?php //esc_html_e( 'Ready to Make a Difference?', 'jaffrey-democrats' ); ?>
+<!--                </h2>-->
+<!--                <p class="mt-3 text-base text-red-100">-->
+<!--                    --><?php //esc_html_e( 'Join the Jaffrey Democrats and help build a better future for our community.', 'jaffrey-democrats' ); ?>
+<!--                </p>-->
+<!--                <div class="mt-7 flex flex-wrap items-center justify-center gap-3">-->
+<!--                    <a-->
+<!--                            href="--><?php //echo esc_url( home_url( '/volunteer/' ) ); ?><!--"-->
+<!--                            class="rounded-md bg-white px-6 py-2.5 text-sm font-semibold text-red-900 shadow-sm transition hover:bg-red-50"-->
+<!--                    >-->
+<!--                        --><?php //esc_html_e( 'Volunteer', 'jaffrey-democrats' ); ?>
+<!--                    </a>-->
+<!--                    <a-->
+<!--                            href="--><?php //echo esc_url( home_url( '/donate/' ) ); ?><!--"-->
+<!--                            class="rounded-md border border-white/70 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"-->
+<!--                    >-->
+<!--                        --><?php //esc_html_e( 'Donate', 'jaffrey-democrats' ); ?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
     </main>
 
 <?php

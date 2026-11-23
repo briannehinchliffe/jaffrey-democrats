@@ -1,4 +1,4 @@
-# jaffrey-democrats
+# Jaffrey Democrats
 
 A custom theme based on \_tw
 

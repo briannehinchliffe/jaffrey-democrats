@@ -46,7 +46,7 @@ $query_val = get_search_query();
                 name="s"
                 value="<?php echo esc_attr( $query_val ); ?>"
                 placeholder="<?php esc_attr_e( 'What are you looking for?', 'jaffrey-democrats' ); ?>"
-                class="w-full min-w-0 border-0 bg-transparent py-2.5 text-base text-slate-900 placeholder-slate-400 focus:ring-0 focus:outline-none"
+                class="w-full min-w-0 border-0 bg-transparent py-2.5 text-base text-slate-900 placeholder-slate-400"
             />
             <button
                 type="submit"

@@ -71,9 +71,22 @@
 		width: auto;
 		min-width: 0;
 		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-self: stretch;
+		box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 12px;
+		border: 1px solid rgb(228, 234, 245);
+
+		> .card {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
-	> .wp-block-column:not(:has(*)) {
-		display: none;
+	.card-footer {
+		margin-top: auto;
+		margin-block-start: auto;
+		padding-block-start: var(--wp--preset--spacing--60);
 	}
 }

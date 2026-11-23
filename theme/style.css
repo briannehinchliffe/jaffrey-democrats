@@ -3,12 +3,12 @@
 Theme Name: Jaffrey Democrats
 Theme URI: https://github.com/briannehinchliffe/jaffrey-democrats
 Description: A custom theme for the Democrats of Jaffrey, NH.
-Version: 1.3.0
+Version: 1.4.0
 Author: Brianne Hinchliffe
 Author URI: https://briannehinchliffe.com/
 Text Domain: jaffrey-democrats
-Requires at least: 7.1.2
-Requires PHP: 8.2
+Requires at least: 7.1.5
+Requires PHP: 8.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -33,7 +33,6 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --color-red-700: oklch(50.5% 0.213 27.518);
   --color-red-800: oklch(44.4% 0.177 26.899);
   --color-red-900: oklch(39.6% 0.141 25.723);
-  --color-sky-200: oklch(90.1% 0.058 230.902);
   --color-blue-300: oklch(80.9% 0.105 251.813);
   --color-slate-50: oklch(98.4% 0.003 247.858);
   --color-slate-100: oklch(96.8% 0.007 247.896);
@@ -680,11 +679,11 @@ header#masthead .custom-logo {
   padding-block: 1.5rem;
 }
 .jaffrey-democrats-result + .jaffrey-democrats-result {
-  border-top: 1px solid var(--wp--preset--color--foreground);
+  border-top: 1px solid	var(--wp--preset--color--foreground);
 }
 @supports (color: color-mix(in lab, red, red)) {
   .jaffrey-democrats-result + .jaffrey-democrats-result {
-    border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground) 15%, transparent);
+    border-top: 1px solid	color-mix(	in srgb,	var(--wp--preset--color--foreground) 15%,	transparent	);
   }
 }
 .jaffrey-democrats-result__meta {
@@ -697,7 +696,7 @@ header#masthead .custom-logo {
 }
 @supports (color: color-mix(in lab, red, red)) {
   .jaffrey-democrats-result__meta {
-    color: color-mix(in srgb, var(--wp--preset--color--foreground) 75%, var(--wp--preset--color--background));
+    color: color-mix(	in srgb,	var(--wp--preset--color--foreground) 75%,	var(--wp--preset--color--background)	);
   }
 }
 .jaffrey-democrats-result__path {
@@ -729,7 +728,7 @@ header#masthead .custom-logo {
 }
 @supports (color: color-mix(in lab, red, red)) {
   .jaffrey-democrats-mark {
-    background: color-mix(in srgb, var(--wp--preset--color--secondary) 30%, transparent);
+    background: color-mix(	in srgb,	var(--wp--preset--color--secondary) 30%,	transparent	);
   }
 }
 .jaffrey-democrats-mark {
@@ -837,9 +836,6 @@ header#masthead .custom-logo {
 }
 .relative {
   position: relative;
-}
-.static {
-  position: static;
 }
 .sticky {
   position: sticky;
@@ -1112,11 +1108,6 @@ header#masthead .custom-logo {
 }
 .gap-12 {
   gap: calc(var(--spacing) * 12);
-}
-:where(.space-y-3 > :not(:last-child)) {
-  --tw-space-y-reverse: 0;
-  margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-  margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
 }
 :where(.space-y-4 > :not(:last-child)) {
   --tw-space-y-reverse: 0;
@@ -1487,14 +1478,6 @@ header#masthead .custom-logo {
 .text-secondary {
   color: var(--color-secondary);
 }
-.text-sky-200\/80 {
-  color: color-mix(in srgb, oklch(90.1% 0.058 230.902) 80%, transparent);
-}
-@supports (color: color-mix(in lab, red, red)) {
-  .text-sky-200\/80 {
-    color: color-mix(in oklab, var(--color-sky-200) 80%, transparent);
-  }
-}
 .text-slate-200 {
   color: var(--color-slate-200);
 }
@@ -1611,10 +1594,6 @@ header#masthead .custom-logo {
   --tw-duration: 300ms;
   transition-duration: 300ms;
 }
-.content-none {
-  --tw-content: none;
-  content: none;
-}
 .focus-within\:border-red-800:focus-within {
   border-color: var(--color-red-800);
 }
@@ -1638,11 +1617,6 @@ header#masthead .custom-logo {
 @media (hover: hover) {
   .hover\:border-slate-300:hover {
     border-color: var(--color-slate-300);
-  }
-}
-@media (hover: hover) {
-  .hover\:border-slate-400:hover {
-    border-color: var(--color-slate-400);
   }
 }
 @media (hover: hover) {
@@ -1771,11 +1745,6 @@ header#masthead .custom-logo {
 @media (width >= 40rem) {
   .sm\:py-20 {
     padding-block: calc(var(--spacing) * 20);
-  }
-}
-@media (width >= 40rem) {
-  .sm\:py-24 {
-    padding-block: calc(var(--spacing) * 24);
   }
 }
 @media (width >= 40rem) {

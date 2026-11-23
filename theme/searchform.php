@@ -23,7 +23,7 @@ $query_val = get_search_query();
                 name="s"
                 value="<?php echo esc_attr( $query_val ); ?>"
                 placeholder="<?php esc_attr_e( 'Search...', 'jaffrey-democrats' ); ?>"
-                class="w-full border-0 bg-transparent px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0"
+                class="w-full border-0 bg-transparent px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:ring-0 focus:outline-none"
             />
             <button
                 type="submit"
@@ -46,11 +46,11 @@ $query_val = get_search_query();
                 name="s"
                 value="<?php echo esc_attr( $query_val ); ?>"
                 placeholder="<?php esc_attr_e( 'What are you looking for?', 'jaffrey-democrats' ); ?>"
-                class="w-full min-w-0 border-0 bg-transparent py-2.5 text-base text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0"
+                class="w-full min-w-0 border-0 bg-transparent py-2.5 text-base text-slate-900 placeholder-slate-400 focus:ring-0 focus:outline-none"
             />
             <button
                 type="submit"
-                class="shrink-0 rounded-lg bg-red-800 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-800 focus:ring-offset-2"
+                class="shrink-0 rounded-lg bg-red-800 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-red-900 focus:ring-2 focus:ring-red-800 focus:ring-offset-2 focus:outline-none"
             >
                 <?php esc_html_e( 'Search', 'jaffrey-democrats' ); ?>
             </button>

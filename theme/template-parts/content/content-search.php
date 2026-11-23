@@ -11,7 +11,7 @@ $type_label    = $post_type_obj ? $post_type_obj->labels->singular_name : get_po
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'rounded-xl border border-slate-200 bg-white p-6 shadow-xs transition hover:border-slate-300' ); ?>>
     <div class="flex flex-wrap items-center gap-2 text-xs">
-		<span class="rounded-md bg-slate-100 px-2.5 py-0.5 font-semibold uppercase tracking-wide text-[#0c2340]">
+		<span class="rounded-md bg-slate-100 px-2.5 py-0.5 font-semibold tracking-wide text-[#0c2340] uppercase">
 			<?php echo esc_html( $type_label ); ?>
 		</span>
         <?php if ( 'post' === get_post_type() || 'tribe_events' === get_post_type() ) : ?>

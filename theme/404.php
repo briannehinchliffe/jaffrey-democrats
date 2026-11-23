@@ -32,7 +32,7 @@ $popular_links = array(
                 <div class="grid items-center gap-12 lg:grid-cols-12">
                     <!-- Left Column -->
                     <div class="lg:col-span-6">
-                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-800">
+                        <p class="text-xs font-bold tracking-[0.2em] text-red-800 uppercase">
                             <?php esc_html_e( 'Error 404', 'jaffrey-democrats' ); ?>
                         </p>
                         <h1 class="mt-3 font-serif text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
@@ -105,7 +105,7 @@ $popular_links = array(
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <div class="flex items-end justify-between gap-4">
                         <div>
-                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-red-800">
+                            <p class="text-xs font-bold tracking-[0.18em] text-red-800 uppercase">
                                 <?php esc_html_e( 'Stay Informed', 'jaffrey-democrats' ); ?>
                             </p>
                             <h2 class="mt-1 font-serif text-2xl font-bold text-slate-950 sm:text-3xl">
@@ -124,7 +124,7 @@ $popular_links = array(
                                     <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" class="text-xs font-medium text-slate-500">
                                         <?php echo esc_html( get_the_date() ); ?>
                                     </time>
-                                    <h3 class="mt-2 font-serif text-lg font-bold leading-snug text-slate-950">
+                                    <h3 class="mt-2 font-serif text-lg leading-snug font-bold text-slate-950">
                                         <a href="<?php the_permalink(); ?>" class="hover:text-red-800">
                                             <?php the_title(); ?>
                                         </a>

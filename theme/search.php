@@ -28,11 +28,11 @@ $suggested_terms = array(
             <!-- Subtle decorative ring on right -->
             <div
                     aria-hidden="true"
-                    class="pointer-events-none absolute -right-24 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full border-[36px] border-white/[0.04]"
+                    class="pointer-events-none absolute top-1/2 -right-24 h-96 w-96 -translate-y-1/2 rounded-full border-[36px] border-white/[0.04]"
             ></div>
 
             <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-                <p class="text-xs font-bold uppercase tracking-[0.2em] text-white">
+                <p class="text-xs font-bold tracking-[0.2em] text-white uppercase">
                     <?php esc_html_e( 'Find What You Need', 'jaffrey-democrats' ); ?>
                 </p>
                 <h1 class="mt-3 font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl">

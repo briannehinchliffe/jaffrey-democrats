@@ -322,7 +322,12 @@ header#masthead {
 }
 
 .jaffrey-democrats-result + .jaffrey-democrats-result {
-	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground) 15%, transparent);
+	border-top: 1px solid
+		color-mix(
+			in srgb,
+			var(--wp--preset--color--foreground) 15%,
+			transparent
+		);
 }
 
 .jaffrey-democrats-result__meta {
@@ -332,7 +337,11 @@ header#masthead {
 	margin: 0 0 0.25rem;
 	font-size: 0.875rem;
 	/* 75% foreground on white stays above 4.5:1 for near-black foregrounds; verify against the palette. */
-	color: color-mix(in srgb, var(--wp--preset--color--foreground) 75%, var(--wp--preset--color--background));
+	color: color-mix(
+		in srgb,
+		var(--wp--preset--color--foreground) 75%,
+		var(--wp--preset--color--background)
+	);
 }
 
 .jaffrey-democrats-result__path {
@@ -367,7 +376,11 @@ header#masthead {
 }
 
 .jaffrey-democrats-mark {
-	background: color-mix(in srgb, var(--wp--preset--color--secondary) 30%, transparent);
+	background: color-mix(
+		in srgb,
+		var(--wp--preset--color--secondary) 30%,
+		transparent
+	);
 	color: inherit;
 	padding-inline: 0.1em;
 	border-radius: 0.125rem;
@@ -452,7 +465,6 @@ header#masthead {
 		border-width: 3px;
 	}
 }
-
 
 /**
  * Footer styles.

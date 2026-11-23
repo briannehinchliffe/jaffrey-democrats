@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-22
+
+### Added
+
+- Custom `searchform.php` supporting `hero` and `card` layout variants across search and 404 templates.
+- `template-parts/content/content-search.php` partial displaying post-type badges, publish dates, excerpts, and links for search results.
+- "Recent updates from Jaffrey" post grid on `404.php` to surface recent news above the bottom CTA banner.
+- Clickable suggested search topic chips and empty/no-results fallback states in `search.php`.
+
+### Changed
+
+- Redesigned `404.php` with a two-column hero layout, embedded search card with popular page shortcuts, and community CTA banner.
+- Updated `search.php` with a navy hero header, result count bar, clear-search action, and styled pagination.
+
 ## [1.3.0] - 2026-10-07
 
 ### Changed

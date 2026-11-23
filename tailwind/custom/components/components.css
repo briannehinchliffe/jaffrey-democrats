@@ -265,6 +265,207 @@ header#masthead {
 	@apply float-right ml-8;
 }
 
+/*
+ * Search + 404 components.
+ * Import alongside the other files in tailwind/custom/components.
+ * Colors reference theme.json presets so palette changes flow through.
+ */
+
+/* ---------- Header band ---------- */
+.jaffrey-democrats-search__header {
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+}
+
+.jaffrey-democrats-search__header .page-title,
+.jaffrey-democrats-search__header label {
+	color: inherit;
+}
+
+/* ---------- Search form ---------- */
+.jaffrey-democrats-search-form__input {
+	flex: 1 1 auto;
+	min-width: 0;
+	min-height: 3rem;
+	padding: 0.625rem 0.875rem;
+	font-size: max(1rem, 16px); /* Prevent iOS focus zoom. */
+	color: var(--wp--preset--color--foreground);
+	background: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--foreground);
+	border-radius: 0.25rem;
+}
+
+.jaffrey-democrats-search-form__button {
+	min-height: 3rem;
+	white-space: nowrap;
+}
+
+/* Invert on the dark band so the button doesn't disappear. */
+.jaffrey-democrats-search__header .jaffrey-democrats-search-form__button {
+	background: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--primary);
+}
+
+.jaffrey-democrats-search-form__input:focus-visible,
+.jaffrey-democrats-search-form__button:focus-visible,
+.jaffrey-democrats-pill:focus-visible,
+.jaffrey-democrats-result__link:focus-visible,
+.jaffrey-democrats-pagination a:focus-visible,
+.jaffrey-democrats-404 a:focus-visible {
+	outline: 3px solid currentColor;
+	outline-offset: 3px;
+}
+
+/* ---------- Results ---------- */
+.jaffrey-democrats-result {
+	padding-block: 1.5rem;
+}
+
+.jaffrey-democrats-result + .jaffrey-democrats-result {
+	border-top: 1px solid
+		color-mix(
+			in srgb,
+			var(--wp--preset--color--foreground) 15%,
+			transparent
+		);
+}
+
+.jaffrey-democrats-result__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 0.75rem;
+	margin: 0 0 0.25rem;
+	font-size: 0.875rem;
+	/* 75% foreground on white stays above 4.5:1 for near-black foregrounds; verify against the palette. */
+	color: color-mix(
+		in srgb,
+		var(--wp--preset--color--foreground) 75%,
+		var(--wp--preset--color--background)
+	);
+}
+
+.jaffrey-democrats-result__path {
+	overflow-wrap: anywhere;
+}
+
+.jaffrey-democrats-result__title {
+	margin: 0;
+	font-size: 1.375rem;
+	line-height: 1.3;
+}
+
+.jaffrey-democrats-result__link {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+/* Stretched link: whole row clickable, single tab stop. */
+.jaffrey-democrats-result__link::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
+.jaffrey-democrats-result:hover .jaffrey-democrats-result__link {
+	text-decoration-thickness: 2px;
+}
+
+.jaffrey-democrats-result__excerpt {
+	margin: 0.5rem 0 0;
+	max-width: 70ch;
+}
+
+.jaffrey-democrats-mark {
+	background: color-mix(
+		in srgb,
+		var(--wp--preset--color--secondary) 30%,
+		transparent
+	);
+	color: inherit;
+	padding-inline: 0.1em;
+	border-radius: 0.125rem;
+}
+
+/* ---------- Pagination ---------- */
+.jaffrey-democrats-pagination {
+	margin-top: 2.5rem;
+}
+
+.jaffrey-democrats-pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.jaffrey-democrats-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem;
+	min-height: 2.75rem;
+	padding-inline: 0.75rem;
+	border: 1px solid currentColor;
+	border-radius: 0.25rem;
+	text-decoration: none;
+}
+
+.jaffrey-democrats-pagination .page-numbers.current {
+	background: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+}
+
+.jaffrey-democrats-pagination .page-numbers.dots {
+	border-color: transparent;
+}
+
+/* ---------- Helpful links ---------- */
+.jaffrey-democrats-pill {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	padding: 0.5rem 1.125rem;
+	border: 2px solid var(--wp--preset--color--primary);
+	border-radius: 999px;
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--wp--preset--color--primary);
+}
+
+.jaffrey-democrats-pill:hover {
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+}
+
+/* ---------- 404 ---------- */
+.jaffrey-democrats-404__code {
+	margin: 0 0 1rem;
+	font-size: clamp(5rem, 22vw, 11rem);
+	font-weight: 800;
+	line-height: 0.85;
+	letter-spacing: -0.04em;
+	color: transparent;
+	-webkit-text-stroke: 2px var(--wp--preset--color--primary);
+	user-select: none;
+}
+
+/* ---------- Forced colors ---------- */
+@media (forced-colors: active) {
+	.jaffrey-democrats-mark {
+		background: Mark;
+		color: MarkText;
+	}
+
+	.jaffrey-democrats-404__code {
+		color: CanvasText;
+		-webkit-text-stroke: 0;
+	}
+
+	.jaffrey-democrats-pagination .page-numbers.current {
+		border-width: 3px;
+	}
+}
+
 /**
  * Footer styles.
  */
